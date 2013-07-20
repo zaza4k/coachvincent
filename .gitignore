@@ -9,7 +9,7 @@
 /.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
+#/db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -29,11 +29,9 @@ capybara-*.html
 /vendor/bundle
 /log/*
 /tmp/*
-/db/*.sqlite3
 /public/system/*
 /coverage/
 /spec/tmp/*
 **.orig
 rerun.txt
 pickle-email-*.html
->>>>>>> a5590fa5d963e1cec61e9de1ea10ccea712fd142
