@@ -9,12 +9,8 @@
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+require 'spec_helper'
 
-one:
-  nom: MyString
-  email: MyString
-
-two:
-  nom: MyString
-  email: MyString
+describe User do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
