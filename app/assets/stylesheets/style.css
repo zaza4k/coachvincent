@@ -1,8 +1,133 @@
-.menu {
-	padding: 0.5em;
-	border-right: 2px solid #777;
+html { 
+	font-size: 62,5%;
+}
+body {
+	font-size: 16px;
+	background: #f5f5f5;
+}
+/* LAYOUT CSS */
+#layout {
+    padding-left:500px;
+    position: relative;
 }
 
-.main {
-	padding: 0.75em 05em;
+#nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+#nav {
+    margin-left:-500px;
+    width:150px;
+    background: orange;
+    text-align: center;
+    padding: 2em 0;
+}
+
+/* HELPER CLASSES */
+.primary-button,
+.secondary-button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.primary-button {
+    color: #fff;
+    background: #17A174;
+    margin: 1em 0;
+}
+.secondary-button {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 0.5em 2em;
+    font-size: 80%;
+}
+.big {
+  padding: 5px 10px!important;
+  margin-bottom: 20px!important;
+}
+
+
+
+/* Vertical Navigation Styles */
+#nav .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+    #nav .pure-menu a:hover,
+    #nav .pure-menu a:focus {
+        background: #4AD0A4;
+    }
+    #nav .pure-menu a {
+        color: #fff;
+        margin-left: 0.5em;
+    }
+    #nav .pure-menu-heading {
+        border-bottom: 1px solid #2B795F;
+        color: #2B795F;
+    }
+
+    #nav .nav-menu-button {
+        display: none;
+    }
+
+
+@media (max-width: 867px) {
+
+    #list,
+    #main {
+        width: 100%;
+    }
+    #layout {
+        padding-left: -150px;
+    }
+    #list {
+        height: 33%;
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+    #main {
+        position: fixed;
+        top: 33%;
+        right: 0;
+        bottom: 0;
+        left: 150px;
+        overflow: auto;
+        width: auto; /* so that it's not 100% */
+    }
+}
+
+@media (max-width: 480px) {
+    #layout, #nav, #list, #main {
+        position: static;
+        margin: 0;
+        padding: 0;
+    }
+    #nav {
+        width: 100%;
+        height: 40px;
+        position: relative;
+    }
+    #nav .nav-menu-button {
+        display: block;
+        top: 0.5em;
+        right: 0.5em;
+        position: absolute;
+    }
+    #nav.active {
+        height: 80%;
+    }
+    .nav-inner {
+        display: none;
+    }
+    #nav.active .nav-inner {
+        display: block;
+    }
+    .email-avatar {
+        width: 40px;
+        height: 40px;
+    }
 }

@@ -13,7 +13,7 @@
   line-height: 14px;
   
   vertical-align: top;
-  background-image: url(../img/glyphicons-halflings.png);
+  background-image: url('glyphicons-halflings.png');
   
   background-repeat: no-repeat;
 
@@ -22,7 +22,7 @@
   *margin-left: 0;
 }
 .m-btn .icon-white {
-  background-image: url(../img/glyphicons-halflings-white.png);
+  background-image: url('glyphicons-halflings-white.png');
 }
 .disabled > [class^="icon-"], [disabled] > [class^="icon-"]{
   opacity: 0.5;
@@ -603,7 +603,7 @@
   line-height: 14px;
   
   vertical-align: top;
-  background-image: url(../img/syncfusion-icons.png);
+  background-image: url('syncfusion-icons.png');
   background-position: 0 0;
   background-repeat: no-repeat; 
   
@@ -614,12 +614,12 @@
   height: 30px; 
   margin: 6px;
   vertical-align: top;
-  background-image: url(../img/syncfusion-icons.png);
+  background-image: url('syncfusion-icons.png');
   background-position: 0 0px;
   background-repeat: no-repeat; 
 }
 .m-icon-white {
-  background-image: url(../img/syncfusion-icons-white.png);
+  background-image: url('syncfusion-icons-white.png');
 }
 [class^="big-"]:last-child {
   *margin-left: 0;

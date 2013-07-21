@@ -2,9 +2,17 @@
 <html>
   <head>
     <title>CoachVincent | <%= @titre %></title>
+    <%= render 'layouts/stylesheets' %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= yield %>
+  	<div class="pure-g-r" id="layout">
+  		<div class="pure-u" id="nav">
+			<%= render 'layouts/nav' %>
+		</div>
+		<div class="pure-u-1">
+    		<%= yield %>
+    	</div>
+	</div>
   </body>
 </html>
