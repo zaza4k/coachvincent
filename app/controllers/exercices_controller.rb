@@ -1,4 +1,5 @@
 class ExercicesController < ApplicationController
+ 
   # GET /exercices
   # GET /exercices.json
   def index
