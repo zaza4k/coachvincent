@@ -2,132 +2,200 @@ html {
 	font-size: 62,5%;
 }
 body {
-	font-size: 16px;
 	background: #f5f5f5;
 }
 /* LAYOUT CSS */
 #layout {
-    padding-left:500px;
     position: relative;
-}
-
-#nav {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    overflow: auto;
-}
-#nav {
-    margin-left:-500px;
-    width:150px;
-    background: orange;
     text-align: center;
-    padding: 2em 0;
 }
-
-/* HELPER CLASSES */
-.primary-button,
-.secondary-button {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
-.primary-button {
+.header .pure-menu {
+    border-bottom-color: black;
+    border-radius: 0;
+    height: 50px;
+    background: #FF8B00;
+    line-height: 25px;
     color: #fff;
-    background: #17A174;
-    margin: 1em 0;
 }
-.secondary-button {
+a.pure-menu-heading{
+  color: #fff!important;
+  font-weight: bold;
+}
+.header .pure-menu li {
+  height:50px;
+}
+.header .pure-menu li a {
+  color: #fff;  
+  line-height:38px;
+}
+.header .pure-menu li a:hover {
+  background: #f5f5f5;
+  color: #FF8B00;
+}
+.header .pure-menu .pure-menu-item li {
+  background: #f5f5f5;
+}
+.header .pure-menu .pure-menu-item li a {
+  color: #FF8B00;
+}
+.header .pure-menu .pure-menu-item li a:hover {
+  background: #FF8B00;
+  color: #f5f5f5;
+}
+
+
+li.pure-u-1-4 {
+  padding: 20px;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+#grid {
+  text-align:center;
+}
+
+#grid li {
+  height: 420px;
+  text-align: center;
+}
+
+#grid:before,
+#grid:after {
+  content: "";
+  display: table;
+}
+
+#grid:after {
+  clear: both;
+}
+
+#grid li > a {
+    display: block;
+    height: 100%;
+    color: #FF8B00;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.h-icon {
+    padding: 30px 0 0 0;
+    display: block;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.h-icon:before {
+    font-family: 'icomoon';
+    font-size: 14em;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.h-icon-npro:before {
+    content: "\e000";
+}
+ 
+.h-icon-nexo:before {
+   content: "\e001";
+}
+ 
+.h-icon-pro:before {
+    content: "\e002";
+}
+ 
+.h-icon-exo:before {
+    content: "\e003";
+}
+
+#grid .h-title {
+    margin: 20px 0 10px 0;
+    padding: 20px 0 0 0;
+    font-size: 1.5em;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+#grid .h-title:before {
+    content: '';
+    position: absolute;
+    background: #FF8B00;
+    width: 160px;
+    height: 6px;
+    top: 0px;
+    left: 50%;
+    margin: -10px 0 0 -80px;
+    -webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+    -moz-transition: margin-top 0.2s;
+    transition: margin-top 0.2s;
+}
+
+#grid .h-category {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #fff;
+    -webkit-transform: translateY(10px);
+    -moz-transform: -moz-translateY(10px);
+    -ms-transform: -ms-translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    -webkit-transition: transform 0.3s, opacity 0.2s;
+}
+
+#grid li:hover .h-category,
+.touch #grid li .h-category {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+#grid li > a:hover {
+    background: #FF8B00;
+}
+ 
+#grid li > a:hover .h-icon {
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+}
+ 
+#grid li > a:hover .h-icon:before,
+#grid li > a:hover .h-title {
+    color: #fff;
+}
+ 
+#grid li > a:hover .h-title {
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+}
+ 
+#grid li > a:hover .h-title:before {
     background: #fff;
-    border: 1px solid #ddd;
-    color: #666;
-    padding: 0.5em 2em;
-    font-size: 80%;
-}
-.big {
-  padding: 5px 10px!important;
-  margin-bottom: 20px!important;
-}
-
-
-
-/* Vertical Navigation Styles */
-#nav .pure-menu {
-    background: transparent;
-    border: none;
-    text-align: left;
-}
-    #nav .pure-menu a:hover,
-    #nav .pure-menu a:focus {
-        background: #4AD0A4;
-    }
-    #nav .pure-menu a {
-        color: #fff;
-        margin-left: 0.5em;
-    }
-    #nav .pure-menu-heading {
-        border-bottom: 1px solid #2B795F;
-        color: #2B795F;
-    }
-
-    #nav .nav-menu-button {
-        display: none;
-    }
-
-
-@media (max-width: 867px) {
-
-    #list,
-    #main {
-        width: 100%;
-    }
-    #layout {
-        padding-left: -150px;
-    }
-    #list {
-        height: 33%;
-        border-right: 0;
-        border-bottom: 1px solid #ddd;
-    }
-    #main {
-        position: fixed;
-        top: 33%;
-        right: 0;
-        bottom: 0;
-        left: 150px;
-        overflow: auto;
-        width: auto; /* so that it's not 100% */
-    }
-}
-
-@media (max-width: 480px) {
-    #layout, #nav, #list, #main {
-        position: static;
-        margin: 0;
-        padding: 0;
-    }
-    #nav {
-        width: 100%;
-        height: 40px;
-        position: relative;
-    }
-    #nav .nav-menu-button {
-        display: block;
-        top: 0.5em;
-        right: 0.5em;
-        position: absolute;
-    }
-    #nav.active {
-        height: 80%;
-    }
-    .nav-inner {
-        display: none;
-    }
-    #nav.active .nav-inner {
-        display: block;
-    }
-    .email-avatar {
-        width: 40px;
-        height: 40px;
-    }
+    margin-top: 80px;
 }

@@ -1,15 +1,24 @@
-			    <a href="#" class="nav-menu-button">CoachVincent</a>
-		        <div class="nav-inner">
-		        	<a href="#" class="m-btn green big"><i class="m-icon-big-swapright m-icon-white"></i>Nouveau</a>
-		        	<div class="pure-menu pure-menu-open">
-					    <ul>
-					      <li><%= link_to "Accueil", root_path %></li>
-					      <li><%= link_to "Exercices", exercices_path %></li>
-					      <li><%= link_to "Programmes", programmes_path %></li>
-					      <li><%= link_to "Dico des sports", dico_path %></li>
-					      <li class="pure-menu-heading">Paramètres</li>
-					      <li><%= link_to "Signup", signup_path %></li>
-					      <li><%= link_to "Logout", 'logout' %></li>
-					    </ul>
-				</div>
-		    </div>
+			     <div class="header">
+			        <div class="pure-menu pure-menu-open pure-menu-horizontal" id="horizontal-menu">
+			            <a class="pure-menu-heading" href="">CoachVincent</a>
+			            <ul id="std-menu-items">
+			                <li><%= link_to "Accueil", root_path %></li>
+			                <li>
+			                	<%= link_to "Exercices", exercices_path %>
+			                	<ul>
+			                		<li><a href="#">Créer un exercice</a></li>
+			                		<li><a href="#">Voir tous les exercices</a></li>
+			                	</ul>
+			                </li>
+					      	<li>
+					      		<%= link_to "Programmes", programmes_path %>
+					      		<ul>
+			                		<li><a href="#">Créer un programme</a></li>
+			                		<li><a href="#">Voir tous les programmes</a></li>
+			                	</ul>
+					      	</li>
+					      	<li><%= link_to "Dico des sports", dico_path %></li>
+					      	<li><%= link_to "Logout", 'logout' %></li>
+			            </ul>
+			        </div>
+			    </div>
