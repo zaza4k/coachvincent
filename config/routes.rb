@@ -1,13 +1,11 @@
 Coachvincent::Application.routes.draw do
-  
+
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
   get "pages/dico"
   get "users/new"
 
-  match '/exercices', :to => 'pages#exercices'
-  match '/programmes',   :to => 'pages#programmes'
   match '/dico',    :to => 'pages#dico'
   match '/signup', :to =>'users#new'
   
@@ -49,6 +47,8 @@ Coachvincent::Application.routes.draw do
 
   resources :messages
   resources :users
+  resources :exercices
+  resources :programmes
 
 
   # Sample resource route with more complex sub-resources

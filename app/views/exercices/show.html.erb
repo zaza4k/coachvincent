@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @exercice.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @exercice.description %>
+</p>
+
+<p>
+  <b>Muscles:</b>
+  <%= @exercice.muscles %>
+</p>
+
+<p>
+  <b>Conseils:</b>
+  <%= @exercice.conseils %>
+</p>
+
+
+<%= link_to 'Edit', edit_exercice_path(@exercice) %> |
+<%= link_to 'Back', exercices_path %>

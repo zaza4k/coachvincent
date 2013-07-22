@@ -6,15 +6,15 @@
 			                <li>
 			                	<%= link_to "Exercices", exercices_path %>
 			                	<ul>
-			                		<li><a href="#">Créer un exercice</a></li>
-			                		<li><a href="#">Voir tous les exercices</a></li>
+			                		<li><%= link_to "Créer un nouvel exercice", controller: "exercices", action: "new", id: @exercice %></li>
+			                		<li><%= link_to "Voir tous les exercices", controller: "exercices", action: "index" %></li>
 			                	</ul>
 			                </li>
 					      	<li>
 					      		<%= link_to "Programmes", programmes_path %>
 					      		<ul>
-			                		<li><a href="#">Créer un programme</a></li>
-			                		<li><a href="#">Voir tous les programmes</a></li>
+			                		<li><%= link_to "Créer un nouveau programme", controller: "programmes", action: "new", id: @exercice %></li>
+			                		<li><%= link_to "Voir tous les programmes", controller: "programmes", action: "index" %></li>
 			                	</ul>
 					      	</li>
 					      	<li><%= link_to "Dico des sports", dico_path %></li>

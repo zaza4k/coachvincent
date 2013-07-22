@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @programme.Title %>
+</p>
+
+<p>
+  <b>Intro:</b>
+  <%= @programme.Intro %>
+</p>
+
+<p>
+  <b>Contenu:</b>
+  <%= @programme.Contenu %>
+</p>
+
+<p>
+  <b>Series:</b>
+  <%= @programme.Series %>
+</p>
+
+<p>
+  <b>Repetitions:</b>
+  <%= @programme.Repetitions %>
+</p>
+
+<p>
+  <b>Repos:</b>
+  <%= @programme.Repos %>
+</p>
+
+<p>
+  <b>Outro:</b>
+  <%= @programme.Outro %>
+</p>
+
+
+<%= link_to 'Edit', edit_programme_path(@programme) %> |
+<%= link_to 'Back', programmes_path %>
