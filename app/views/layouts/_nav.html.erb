@@ -6,22 +6,27 @@
 			                <li>
 			                	<%= link_to "Exercices", exercices_path %>
 			                	<ul>
-			                		<li><%= link_to "Créer un nouvel exercice", controller: "exercices", action: "new", id: @exercice %></li>
-			                		<li><%= link_to "Voir tous les exercices", controller: "exercices", action: "index" %></li>
+			                		<li><%= link_to "Créer un nouvel exercice", exercices_path %></li>
+			                		<li><%= link_to "Voir tous les exercices", exercices_path %></li>
 			                	</ul>
 			                </li>
 					      	<li>
 					      		<%= link_to "Programmes", programmes_path %>
 					      		<ul>
-			                		<li><%= link_to "Créer un nouveau programme", controller: "programmes", action: "new", id: @exercice %></li>
-			                		<li><%= link_to "Voir tous les programmes", controller: "programmes", action: "index" %></li>
+			                		<li><%= link_to "Créer un nouveau programme", programmes_path %></li>
+			                		<li><%= link_to "Voir tous les programmes", programmes_path %></li>
 			                	</ul>
 					      	</li>
 					      	<li><%= link_to "Dico des sports", dico_path %></li>
-					      	
-					      		
-								
-					      	
+					      	<% if admin_signed_in? %>
+							  <li>
+							  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
+							  </li>
+							<% else %>
+							  <li>
+							  <%= link_to('Login', new_admin_session_path)  %>  
+							  </li>	
+							  <% end %>				      	
 			            </ul>
 			        </div>
 			    </div>

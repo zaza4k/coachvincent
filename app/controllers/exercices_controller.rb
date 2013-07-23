@@ -1,5 +1,5 @@
 class ExercicesController < ApplicationController
- 
+before_filter :authenticate_admin!
   # GET /exercices
   # GET /exercices.json
   def index

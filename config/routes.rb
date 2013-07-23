@@ -1,6 +1,5 @@
 Coachvincent::Application.routes.draw do
 
-  
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
@@ -45,6 +44,12 @@ Coachvincent::Application.routes.draw do
   resources :exercices
   resources :programmes
 
+devise_for :admins do
+  get "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
+end 
+  resources :admins
+
+  devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
 
   # Sample resource route with more complex sub-resources
