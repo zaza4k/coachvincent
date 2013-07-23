@@ -49,7 +49,7 @@ devise_for :admins do
   get "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
 end 
 
-  devise_for :admins, :path => '', :path_prefix => 'd', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'coachvincentinscriptionxxx'}
+  devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'coachvincentinscriptionxxx'}
   resources :admins
 
   # Sample resource route with more complex sub-resources
