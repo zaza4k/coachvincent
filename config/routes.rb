@@ -1,12 +1,12 @@
 Coachvincent::Application.routes.draw do
 
+  get "admins/index"
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
   get "pages/dico"
 
   match '/dico', :to => 'pages#dico'
-  match 'admins/:id' => 'admins#show'
 
 
 
@@ -41,16 +41,16 @@ Coachvincent::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
-  resources :exercices
-  resources :programmes
-
-devise_for :admins do
+  devise_for :admins do
   get "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
 end 
 
   devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'coachvincentinscriptionxxx'}
+  
   resources :admins
+
+  resources :exercices
+  resources :programmes
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
