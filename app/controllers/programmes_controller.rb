@@ -3,6 +3,7 @@ before_filter :authenticate_admin!
   # GET /programmes
   # GET /programmes.json
   def index
+    @title = "Programmes"
     @programmes = Programme.all
 
     respond_to do |format|
@@ -13,7 +14,7 @@ before_filter :authenticate_admin!
 
   # GET /programmes/1
   # GET /programmes/1.json
-  def show
+  def show    
     @programme = Programme.find(params[:id])
 
     respond_to do |format|
@@ -25,6 +26,7 @@ before_filter :authenticate_admin!
   # GET /programmes/new
   # GET /programmes/new.json
   def new
+    @title = "Nouveau programme"
     @programme = Programme.new
 
     respond_to do |format|

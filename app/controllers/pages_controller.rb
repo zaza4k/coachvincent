@@ -1,19 +1,19 @@
 class PagesController < ApplicationController
 before_filter :authenticate_admin!
   def home
-  	@titre = "Accueil"
+  	@title = "Accueil"
   end
 
   def exercices
-  	@titre = "Exercices"
+  	@title = "Exercices"
   end
 
   def programmes
-  	@titre = "Programmes"
+  	@title = "Programmes"
   end
 
   def dico
-  	@titre = "Dico des sports"
+  	@title = "Dico des sports"
   end
 
 end

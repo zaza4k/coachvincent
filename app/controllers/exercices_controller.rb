@@ -3,6 +3,7 @@ before_filter :authenticate_admin!
   # GET /exercices
   # GET /exercices.json
   def index
+    @title = "Exercices"
     @exercices = Exercice.all
 
     respond_to do |format|
@@ -25,6 +26,7 @@ before_filter :authenticate_admin!
   # GET /exercices/new
   # GET /exercices/new.json
   def new
+    @title = "Nouvel exercice"
     @exercice = Exercice.new
 
     respond_to do |format|

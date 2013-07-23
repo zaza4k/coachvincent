@@ -49,7 +49,7 @@ devise_for :admins do
 end 
   resources :admins
 
-  devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'coachvincentinscriptionxxx'}
 
 
   # Sample resource route with more complex sub-resources
