@@ -63,7 +63,7 @@ li.pure-u-1-4 {
 }
 
 #grid li {
-  height: 420px;
+  height: 350px;
   text-align: center;
 }
 
@@ -189,10 +189,10 @@ li.pure-u-1-4 {
 }
  
 #grid li > a:hover .h-title {
-    -webkit-transform: translateY(-30px);
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    transform: translateY(-30px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
  
 #grid li > a:hover .h-title:before {

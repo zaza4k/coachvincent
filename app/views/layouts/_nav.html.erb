@@ -20,16 +20,21 @@
 			                	</ul>
 					      	</li>					      	
 					      	<li><%= link_to "Dico des sports", dico_path %></li>
-
-					      	<% if admin_signed_in? %>
-							  <li>
-							  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
-							  </li>
-							<% else %>
-							  <li>
-							  <%= link_to('Login', new_admin_session_path)  %>
-							  </li>
-							  <% end %>			      	
+							<li>
+							  	Gestion du profil
+							  	<ul>
+			                		<% if admin_signed_in? %>
+									<li>
+										<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
+									</li>
+									<% else %>
+									<li>
+									  <%= link_to('Login', new_admin_session_path)  %>
+									</li>
+									<% end %>			                			
+			                		</li>
+			                	</ul>
+							</li>	      	
 			            </ul>
 
 			        </div>
