@@ -14,11 +14,17 @@ body {
     border-radius: 0;
     height: 50px;
     background: #FF8B00;
-    line-height: 25px;
+    line-height: 38px;
     color: #fff;
+}
+.pure-menu-heading {
+  height: 38px;
+  float: left;
+  line-height: 38px;
 }
 a.pure-menu-heading{
   color: #fff!important;
+  background: none;
   font-weight: bold;
 }
 .header .pure-menu li {
@@ -31,6 +37,9 @@ a.pure-menu-heading{
 .header .pure-menu li a:hover {
   background: #f5f5f5;
   color: #FF8B00;
+}
+.hdear .pure-menu .pure-menu-children {
+  border: none;
 }
 .header .pure-menu .pure-menu-item li {
   background: #f5f5f5;
@@ -46,17 +55,6 @@ a.pure-menu-heading{
 
 li.pure-u-1-4 {
   padding: 20px;
-}
-
-@font-face {
-  font-family: 'icomoon';
-  src:url('icomoon.eot');
-  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-    url('icomoon.woff') format('woff'),
-    url('icomoon.ttf') format('truetype'),
-    url('icomoon.svg#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 #grid {
   text-align:center;
