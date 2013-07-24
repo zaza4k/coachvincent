@@ -36,10 +36,10 @@ Coachvincent::Application.configure do
   config.assets.debug = true
 
   # Add the fonts path
-config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
-# Precompile additional assets
-config.assets.precompile += %w( .svg .eot .woff .ttf )
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 
-config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
