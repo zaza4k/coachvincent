@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Titre :</b>
   <%= @exercice.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Contenu de l'exercice :</b>
   <%= @exercice.description %>
 </p>
 
 <p>
-  <b>Muscles:</b>
+  <b>Muscles :</b>
   <%= @exercice.muscles %>
 </p>
 
 <p>
-  <b>Conseils:</b>
+  <b>Conseils :</b>
   <%= @exercice.conseils %>
 </p>
 
 
-<%= link_to 'Edit', edit_exercice_path(@exercice) %> |
-<%= link_to 'Back', exercices_path %>
+<%= link_to 'Editer', edit_exercice_path(@exercice) %> |
+<%= link_to 'Retour à la liste', exercices_path %>

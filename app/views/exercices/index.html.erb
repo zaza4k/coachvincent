@@ -1,9 +1,9 @@
-<h1>Listing exercices</h1>
+<h1>Liste des exercices</h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
+    <th>Titre</th>
+    <th>Exercice</th>
     <th>Muscles</th>
     <th>Conseils</th>
     <th></th>
@@ -17,13 +17,13 @@
     <td><%= exercice.description %></td>
     <td><%= exercice.muscles %></td>
     <td><%= exercice.conseils %></td>
-    <td><%= link_to 'Show', exercice %></td>
-    <td><%= link_to 'Edit', edit_exercice_path(exercice) %></td>
-    <td><%= link_to 'Destroy', exercice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Montrer', exercice %></td>
+    <td><%= link_to 'Editer', edit_exercice_path(exercice) %></td>
+    <td><%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Exercice', new_exercice_path %>
+<%= link_to 'Nouvel exercice', new_exercice_path %>

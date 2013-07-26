@@ -1,6 +1,7 @@
 
 
-body {
+#wrapper-login {
+  height: auto;
 background: #ff6614; /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMSUiIHN0b3AtY29sb3I9IiNmZjY2MTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWY3NzAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -14,6 +15,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6614', end
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Raleway', sans-serif;
+}
+#footer {
+  text-align: center;
+}
+#footer a {
+  color: #FF8B00;
+}
+#footer a:hover {
+  text-decoration: underline;
 }
 /* LAYOUT CSS */
 #login {
@@ -32,6 +42,9 @@ h1, h2, h3, h4, h5 {
   font-size: 0.8em;
   margin-top: -2.0em;
 }
+#login a:hover {
+  text-decoration: underline;
+}
 #login-btn {
   margin-top: 2.0em;
 }
@@ -44,53 +57,19 @@ h1, h2, h3, h4, h5 {
     position: relative;
     text-align: center;
 }
-.header .pure-menu {
-    border-bottom-color: black;
-    border-radius: 0;
-    height: 50px;
-    background: #FF8B00;
-    line-height: 38px;
-    color: #fff;
-}
-.pure-menu-heading {
-  height: 38px;
-  float: left;
-  line-height: 38px;
-}
-a.pure-menu-heading{
-  color: #fff!important;
-  background: none;
-  font-weight: bold;
-}
-.header .pure-menu li {
-  height:50px;
-}
-.header .pure-menu li a {
-  color: #fff;  
-  line-height:38px;
-}
-.header .pure-menu li a:hover {
-  background: #f5f5f5;
-  color: #FF8B00;
-}
-.hdear .pure-menu .pure-menu-children {
-  border: none;
-}
-.header .pure-menu .pure-menu-item li {
-  background: #f5f5f5;
-}
-.header .pure-menu .pure-menu-item li a {
-  color: #FF8B00;
-}
-.header .pure-menu .pure-menu-item li a:hover {
+.navbar {
   background: #FF8B00;
-  color: #f5f5f5;
+ 
+}
+.navbar ul li > a {
+   text-shadow: none;
+   color: #f5f5f5;
 }
 
 
-li.pure-u-1-4 {
-  padding: 20px;
-}
+
+
+
 #grid {
   text-align:center;
 }
@@ -185,7 +164,7 @@ li.pure-u-1-4 {
     display: inline-block;
     font-size: 1em;
     letter-spacing: 1px;
-    color: #fff;
+    color: #ff8b00;
     -webkit-transform: translateY(10px);
     -moz-transform: -moz-translateY(10px);
     -ms-transform: -ms-translateY(10px);
@@ -199,10 +178,10 @@ li.pure-u-1-4 {
 #grid li:hover .h-category,
 .touch #grid li .h-category {
     opacity: 1;
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -ms-transform: translateY(0px);
-    transform: translateY(0px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
 }
 
 #grid li > a:hover {
@@ -210,10 +189,10 @@ li.pure-u-1-4 {
 }
  
 #grid li > a:hover .h-icon {
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    transform: translateY(10px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
 }
  
 #grid li > a:hover .h-icon:before,
