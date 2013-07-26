@@ -60,8 +60,6 @@ module Coachvincent
     config.assets.version = '1.0'
 
     # add app/assets/fonts to the asset path
-    config.assets.paths << Rails.root.join('app', 'assets', 'fonts', 'components') 
-     # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.paths << Rails.root.join('app', 'assets') 
   end
 end
