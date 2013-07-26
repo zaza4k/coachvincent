@@ -1,45 +1,49 @@
-<%= form_for(@programme) do |f| %>
-  <% if @programme.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
+<fieldset class="twelve columns">
+  <%= form_for(@programme) do |f| %>
+    <% if @programme.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
 
-      <ul>
-      <% @programme.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+          <% @programme.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <ul>
+    <li class="field">
+      Titre<br />
+      <%= f.text_field :Title, :class => 'text input' %>
+    </li>
+    <li class="field">
+     Intro<br />
+      <%= f.text_area :Intro, :class => 'textarea input' %>
+    </li>
+    <li class="field">
+      Contenu du programme<br />
+      <%= f.text_area :Contenu, :class => 'textarea input' %>
+    </li>
+    <li class="field">
+      Séries<br />
+      <%= f.text_field :Series, :class => 'numeric input' %>
+    </li>
+    <li class="field">
+      Répétitions<br />
+      <%= f.text_field :Repetitions, :class => 'numeric input' %>
+    </li>
+    <li class="field">
+      Repos<br />
+      <%= f.time_select :Repos, :class => 'text input' %>
+    </li>
+    <li class="field twelve columns">
+      Outro<br />
+      <%= f.text_area :Outro, :class => 'textarea input' %>
+    </li>
+    <div class="actions medium info btn">
+      <%= f.submit %>
     </div>
   <% end %>
+</ul>
+</fieldset>
 
-  <div class="field">
-    Titre<br />
-    <%= f.text_field :Title %>
-  </div>
-  <div class="field">
-   Intro<br />
-    <%= f.text_area :Intro %>
-  </div>
-  <div class="field">
-    Contenu du programme<br />
-    <%= f.text_area :Contenu %>
-  </div>
-  <div class="field">
-    Séries<br />
-    <%= f.text_field :Series %>
-  </div>
-  <div class="field">
-    Répétitions<br />
-    <%= f.text_field :Repetitions %>
-  </div>
-  <div class="field">
-    Repos<br />
-    <%= f.time_select :Repos %>
-  </div>
-  <div class="field">
-    Outro<br />
-    <%= f.text_area :Outro %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

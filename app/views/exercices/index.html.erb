@@ -17,13 +17,15 @@
     <td><%= exercice.description %></td>
     <td><%= exercice.muscles %></td>
     <td><%= exercice.conseils %></td>
-    <td><%= link_to 'Montrer', exercice %></td>
-    <td><%= link_to 'Editer', edit_exercice_path(exercice) %></td>
-    <td><%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></td>
+    <td><div class="small default btn"><%= link_to 'Voir', exercice %></div></td>
+    <td><div class="small default btn"><%= link_to 'Editer', edit_exercice_path(exercice) %></div></td>
+    <td><div class="small danger btn"><%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></div></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<div class="actions medium info btn">
 <%= link_to 'Nouvel exercice', new_exercice_path %>
+</div>

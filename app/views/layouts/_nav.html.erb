@@ -1,15 +1,14 @@
 			    <% if admin_signed_in? %>
-			    <div class="row navbar" id="nav">
+			    <div class="navbar" id="nav">
+			    	<div class="row">
 			        <a class="toggle" gumby-trigger="#nav > .row > ul" href="#"><i class="icon-menu"></i></a>
-			            <h1 class="two columns">
-			            	<a href="#">
-			            		
-			            		<!--<img src="/img/" gumby-retina />-->
+			            <h5 class="two columns">
+			            	<%= link_to "CoachVincent", root_path %>
 			            	</a>
-			        	</h1>
+			        	</h5>
 			           
 			            <ul class="eight columns">
-			                <li><%= link_to "Accueil", root_path %></li>
+			                <li></li>
 			                <li>
 			                	<%= link_to "Exercices", exercices_path %>
 			                	<div class="dropdown">
@@ -46,6 +45,7 @@
 				                </div>
 							</li>	      	
 			            </ul>
+			        </div>
 
 			      
 			    </div> <% end %>

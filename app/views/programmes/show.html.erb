@@ -1,40 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Titre :</b>
-  <%= @programme.Title %>
-</p>
-
-<p>
-  <b>Intro :</b>
-  <%= @programme.Intro %>
-</p>
-
-<p>
-  <b>Contenu du programme :</b>
-  <%= @programme.Contenu %>
-</p>
-
-<p>
-  <b>Séries :</b>
-  <%= @programme.Series %>
-</p>
-
-<p>
-  <b>Répétitions :</b>
-  <%= @programme.Repetitions %>
-</p>
-
-<p>
-  <b>Repos :</b>
-  <%= @programme.Repos %>
-</p>
-
-<p>
-  <b>Outro :</b>
-  <%= @programme.Outro %>
-</p>
+<div class="row">
+  <div class="twelve columns">
+    <h3><%= @programme.Title %></h3>
 
 
-<%= link_to 'Editer', edit_programme_path(@programme) %> |
-<%= link_to 'Revenir à la liste', programmes_path %>
+<p><%= @programme.Title %><p>
+
+<p><%= @programme.Intro %></p>
+
+<p><%= @programme.Contenu %></p>
+
+<p><%= @programme.Outro %></p>
+
+
+<div class="medium info btn">
+  <%= link_to 'Editer', edit_programme_path(@programme) %>
+</div>
+<div class="medium info btn">
+  <%= link_to 'Revenir à la liste', programmes_path %>
+</div>
