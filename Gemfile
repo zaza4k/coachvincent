@@ -10,6 +10,7 @@ gem 'devise'
 
 gem 'modernizr-rails'
 gem 'gumby-framework'
+gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
 
 
 

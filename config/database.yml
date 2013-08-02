@@ -25,3 +25,13 @@ test:
   password: 00789321leodsi
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: d6jjncc19jish0
+  username: pfgaxyuooqzuel
+  password: 6gsjE0W5vfQ5WoSUM_6-xZCsqn
+  host: ec2-54-227-238-25.compute-1.amazonaws.com
+  port: 5432
