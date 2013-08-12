@@ -29,6 +29,8 @@ before_filter :authenticate_admin!
     @title = "Nouveau programme"
     @programme = Programme.new
 
+    @all_exercices = Exercice.all
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @programme }
@@ -44,6 +46,9 @@ before_filter :authenticate_admin!
   # POST /programmes.json
   def create
     @programme = Programme.new(params[:programme])
+
+    params[:exercices][:id].each do |exercice|
+    end
 
     respond_to do |format|
       if @programme.save

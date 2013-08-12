@@ -1,6 +1,5 @@
 Coachvincent::Application.routes.draw do
 
-  get "admins/index"
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
@@ -47,8 +46,7 @@ end
 
   devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => 'coachvincentinscriptionxxx'}
   
-  resources :admins
-
+  resources :admins, only: [:show, :edit, :update]
   resources :exercices
   resources :programmes
 

@@ -1,19 +1,19 @@
 			    <% if admin_signed_in? %>
-			    <div class="navbar" id="nav">
+			    <div gumby-fixed="top" class="navbar" id="nav">
 			    	<div class="row">
 			        <a class="toggle" gumby-trigger="#nav > .row > ul" href="#"><i class="icon-menu"></i></a>
-			            <h5 class="two columns">
-			            	<%= link_to "CoachVincent", root_path %>
+			          
+			            	<%= link_to 'CoachVincent', root_path, {:class => 'two columns branding'} %>
 			            	</a>
-			        	</h5>
+			        	
 			           
-			            <ul class="eight columns">
+			            <ul class="eight columns pull_right">
 			                <li></li>
 			                <li>
 			                	<%= link_to "Exercices", exercices_path %>
 			                	<div class="dropdown">
 				                	<ul>
-				                		<li><%= link_to "Créer un nouvel exercice", :controller => "exercices", :action => "new", :id => @exercices %></li>
+				                		<li><%= link_to "Créer un nouvel exercice", :controller => "/exercices", :action => "new"  %></li>
 				                		<li><%= link_to "Voir tous les exercices", exercices_path %></li>
 				                	</ul>
 				                </div>
@@ -22,17 +22,24 @@
 					      		<%= link_to "Programmes", programmes_path %>
 					      		<div class="dropdown">
 						      		<ul>
-				                		<li><%= link_to "Créer un nouveau programme", :controller => "programmes", :action => "new", :id => @programmes %></li>
+				                		<li><%= link_to "Créer un nouveau programme", :controller => "/programmes", :action => "new", :id => @programmes %></li>
 				                		<li><%= link_to "Voir tous les programmes", programmes_path %></li>
 				                	</ul>
 			                	</div>
 					      	</li>					      	
 					      	<li><%= link_to "Dico des sports", dico_path %></li>
 							<li>
-							  	<a href="#">Gestion du profil</a>
+							  	<a href="#">
+
+							  		<%= image_tag current_admin.avatar.thumb.url %>
+							  		<%= current_admin.email %>
+							  	</a>
 							  	<div class="dropdown">
 								  	<ul>
 				                		<% if admin_signed_in? %>
+				                		<li>
+											<%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %>       
+										</li>
 										<li>
 											<%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %>        
 										</li>

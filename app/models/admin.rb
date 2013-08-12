@@ -4,6 +4,11 @@ class Admin < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-   attr_accessible :email, :password, :password_confirmation, :remember_me
+   attr_accessible :avatar, :email, :password, :password_confirmation, :remember_me
+
+  mount_uploader :avatar, AvatarUploader
+
+  validates_integrity_of :avatar
+  validates_processing_of :avatar
 
 end

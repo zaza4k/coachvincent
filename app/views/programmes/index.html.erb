@@ -5,12 +5,6 @@
         <thead>
           <tr>
             <th>Titre</th>
-            <th>Intro</th>
-            <th>Contenu du programme</th>
-            <th>Series</th>
-            <th>Répétitions</th>
-            <th>Repos</th>
-            <th>Outro</th>
             <th></th>
             <th></th>
             <th></th>
@@ -20,12 +14,6 @@
             <% @programmes.each do |programme| %>
               <tr>
                 <td><%= programme.Title %></td>
-                <td><%= programme.Intro %></td>
-                <td><%= programme.Contenu %></td>
-                <td><%= programme.Series %></td>
-                <td><%= programme.Repetitions %></td>
-                <td><%= programme.Repos %></td>
-                <td><%= programme.Outro %></td>
                 <td><div class="small default btn"><%= link_to 'Voir', programme %></div></td>
                 <td><div class="small default btn"><%= link_to 'Editer', edit_programme_path(programme) %></div></td>
                 <td><div class="small danger btn"><%= link_to 'Supprimer', programme, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></div></td>

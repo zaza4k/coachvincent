@@ -1,3 +1,7 @@
 class Programme < ActiveRecord::Base
-  attr_accessible :Contenu, :Intro, :Outro, :Repetitions, :Repos, :Series, :Title
+	has_many :exercices
+
+	validates :Title, :presence => true
+
+  	attr_accessible :Contenu, :Intro, :Outro, :Title, :exercices
 end

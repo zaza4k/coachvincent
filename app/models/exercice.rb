@@ -1,3 +1,12 @@
 class Exercice < ActiveRecord::Base
-  attr_accessible :conseils, :description, :muscles, :title
+	belongs_to :programme
+
+	validates :title, :presence => true
+
+  attr_accessible :foto, :conseils, :description, :muscles, :title
+  mount_uploader :foto, FotoUploader
+
+  validates_integrity_of :foto
+  validates_processing_of :foto
+
 end

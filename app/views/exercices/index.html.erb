@@ -2,10 +2,8 @@
 
 <table>
   <tr>
-    <th>Titre</th>
-    <th>Exercice</th>
-    <th>Muscles</th>
-    <th>Conseils</th>
+    <th></th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +11,8 @@
 
 <% @exercices.each do |exercice| %>
   <tr>
+    <td><%= image_tag exercice.foto.thumb.url %></td>
     <td><%= exercice.title %></td>
-    <td><%= exercice.description %></td>
-    <td><%= exercice.muscles %></td>
-    <td><%= exercice.conseils %></td>
     <td><div class="small default btn"><%= link_to 'Voir', exercice %></div></td>
     <td><div class="small default btn"><%= link_to 'Editer', edit_exercice_path(exercice) %></div></td>
     <td><div class="small danger btn"><%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></div></td>

@@ -1,6 +1,5 @@
-
-  <fieldset class="twelve columns">
-    <%= form_for(@exercice) do |f| %>
+ <fieldset class="twelve columns">
+    <%= form_for (@exercice), :html => {:multipart => true} do |f| %>
       <% if @exercice.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@exercice.errors.count, "error") %> prohibited this exercice from being saved:</h2>
@@ -13,6 +12,10 @@
         </div>
       <% end %>
     <ul>
+       <li class="field">
+       Photo de l'exercice<br />
+        <%= f.file_field :foto %>
+      </li>
       <li class="field">
        Titre<br />
         <%= f.text_field :title, :class => 'text input' %>
