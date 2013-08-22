@@ -47,9 +47,6 @@ before_filter :authenticate_admin!
   def create
     @programme = Programme.new(params[:programme])
 
-    params[:exercices][:id].each do |exercice|
-    end
-
     respond_to do |format|
       if @programme.save
         format.html { redirect_to @programme, notice: 'Programme was successfully created.' }
