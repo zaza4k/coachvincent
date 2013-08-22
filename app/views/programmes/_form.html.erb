@@ -24,7 +24,7 @@
     <%= fields_for(@programme) do |ab| %>
     <li class="field">
       <%= ab.label "Tous les exercices" %><br />
-      <%= collection_select(:exercices, :id, @all_exercices, :id, :title, {}, {:multiple => true}) %>
+      <%= collection_select(:exercices, :select_id, @all_exercices, :id, :title, {}, {:multiple => true}) %>
     </li>
     <% end %>
 
