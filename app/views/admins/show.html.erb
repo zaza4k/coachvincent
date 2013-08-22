@@ -1,4 +1,16 @@
 <h1>Profil</h1>
 
-<%= image_tag current_admin.avatar_url if current_admin.avatar? %>
-<h3><%= @admin.email %></h3>
+<p>
+	<h5>Photo de profil :</h5>
+	<%= image_tag current_admin.avatar_url if current_admin.avatar? %>
+</p>
+
+
+<p>
+	<h5>Adresse email :</h5>
+	<%= @admin.email %>
+</p>
+
+<div class="big default btn">
+<%= link_to 'Modifier des informations', edit_admin_registration_path(@admin) %>
+</div>

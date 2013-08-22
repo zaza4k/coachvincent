@@ -28,17 +28,17 @@
 			                	</div>
 					      	</li>					      	
 					      	<li><%= link_to "Dico des sports", dico_path %></li>
-							<li>
-							  	<a href="#">
+							<li><% if admin_signed_in? %>
 
-							  		<%= image_tag current_admin.avatar.thumb.url %>
-							  		<%= current_admin.email %>
-							  	</a>
+							  		<%= link_to current_admin do %>
+									  <%= image_tag current_admin.avatar.thumb.url, :class =>"nav_pic" %>
+									  <span class="nav_email"><%= current_admin.email %></span>
+									<% end %>
+							  
 							  	<div class="dropdown">
-								  	<ul>
-				                		<% if admin_signed_in? %>
+								  	<ul>				                		
 				                		<li>
-											<%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %>       
+											<%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %>
 										</li>
 										<li>
 											<%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %>        
