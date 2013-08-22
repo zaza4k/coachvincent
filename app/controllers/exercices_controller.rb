@@ -1,4 +1,4 @@
-class ExercicesController < ApplicationController
+﻿class ExercicesController < ApplicationController
 before_filter :authenticate_admin!
   # GET /exercices
   # GET /exercices.json
@@ -47,7 +47,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @exercice.save
-        format.html { redirect_to @exercice, notice: 'Exercice was successfully created.' }
+        format.html { redirect_to @exercice, notice: 'Exercice sauvegardé avec succès.' }
         format.json { render json: @exercice, status: :created, location: @exercice }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @exercice.update_attributes(params[:exercice])
-        format.html { redirect_to @exercice, notice: 'Exercice was successfully updated.' }
+        format.html { redirect_to @exercice, notice: 'Exercice mis à jour avec succès.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

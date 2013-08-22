@@ -1,5 +1,6 @@
 Coachvincent::Application.routes.draw do
 
+  get "admin/dashboard"
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
@@ -49,6 +50,7 @@ end
   resources :admins, only: [:show, :edit, :update]
   resources :exercices
   resources :programmes
+  resources :dashboard
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
@@ -66,8 +68,17 @@ end
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-   root :to => 'pages#home'
+  # just remember to delete public/index.html.   
+
+  authenticated :admin do
+  root :to => 'admin/dashboard#index', :as => 'authenticated_root'
+  end
+
+  root :to => 'pages#home'
+  
+  # Rails 4 users must specify the 'as' option to give it a unique name
+  # root :to => "main#dashboard", :as => "authenticated_root"
+  
 
   # See how all your routes lay out with "rake routes"
 

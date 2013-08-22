@@ -1,4 +1,4 @@
-class ProgrammesController < ApplicationController
+﻿class ProgrammesController < ApplicationController
 before_filter :authenticate_admin!
   # GET /programmes
   # GET /programmes.json
@@ -49,7 +49,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @programme.save
-        format.html { redirect_to @programme, notice: 'Programme was successfully created.' }
+        format.html { redirect_to @programme, notice: 'Le programme a été sauvegardé avec succès.' }
         format.json { render json: @programme, status: :created, location: @programme }
       else
         format.html { render action: "new" }
@@ -65,7 +65,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @programme.update_attributes(params[:programme])
-        format.html { redirect_to @programme, notice: 'Programme was successfully updated.' }
+        format.html { redirect_to @programme, notice: 'Le programme a été mis à jour avec succès.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

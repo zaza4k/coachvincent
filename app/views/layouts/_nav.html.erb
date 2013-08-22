@@ -55,4 +55,33 @@
 			        </div>
 
 			      
-			    </div> <% end %>
+			    </div> 
+
+			    <% else %>
+
+		      <div gumby-fixed="top" class="navbar" id="nav">
+		    	<div class="row">
+		        <a class="toggle" gumby-trigger="#nav > .row > ul" href="#"><i class="icon-menu"></i></a>
+		          
+		            	<%= link_to 'CoachVincent', root_path, {:class => 'two columns branding'} %>
+		            	</a>
+		        	
+		           
+		            <ul class="eight columns pull_right">		                
+						<li>
+						  <%= link_to('Se connecter', new_admin_session_path)  %>
+						</li>								      	
+		            </ul>
+		        </div>
+
+			      
+			    </div> 
+			     <% end %>
+
+
+
+
+
+
+
+			   

@@ -7,11 +7,6 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <% if admin_signed_in? %>
-       <div id="wrapper">
-        <% else %>
-       <div id="wrapper-login">
-        <% end %>   
     
           <%= render 'layouts/nav' %>
           <div class="row">
