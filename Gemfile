@@ -12,9 +12,8 @@ gem 'devise'
 gem 'modernizr-rails'
 gem 'gumby-framework'
 gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
-gem 'carrierwave'
-gem 'paperclip'
 gem 'rmagick'
+gem 'carrierwave'
 
 
 
