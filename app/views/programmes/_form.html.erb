@@ -28,6 +28,12 @@
       </li>
       <% end %>
       <li class="field">
+      Pas assez de choix ?<br />
+        <div class="actions small default btn">
+      <%= link_to 'Créer un nouvel exercice', new_exercice_path %>
+      </div>
+      </li>
+      <li class="field">
         Conseils<br />
         <%= f.text_area :outro, :class => 'textarea input' %>
       </li>
