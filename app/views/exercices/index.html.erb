@@ -1,35 +1,27 @@
-<h1>Listing exercices</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Muscles</th>
-    <th>Conseils</th>
-    <th>Series</th>
-    <th>Repetitions</th>
-    <th>Repos</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Liste des exercices</h1>
 
 <% @exercices.each do |exercice| %>
-  <tr>
-    <td><%= exercice.title %></td>
-    <td><%= exercice.description %></td>
-    <td><%= exercice.muscles %></td>
-    <td><%= exercice.conseils %></td>
-    <td><%= exercice.series %></td>
-    <td><%= exercice.repetitions %></td>
-    <td><%= exercice.repos %></td>
-    <td><%= link_to 'Show', exercice %></td>
-    <td><%= link_to 'Edit', edit_exercice_path(exercice) %></td>
-    <td><%= link_to 'Destroy', exercice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+<article class="valign row">
+      <div>
+        <%= image_tag exercice.foto.preview.url %>
+      </div>
+      <div>
+        <h4><%= exercice.title %></h4>
+        <P>
+          <%= link_to 'Voir', exercice, :class => 'small default btn' %>
+          <%= link_to 'Editer', edit_exercice_path(exercice), :class => 'small default btn' %>
+          <%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small default btn' %>
+        </P>
+      </div>
+</article>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Exercice', new_exercice_path %>
+
+
+ 
+
+<div class="actions medium info btn">
+<%= link_to 'Nouvel exercice', new_exercice_path %>
+</div>

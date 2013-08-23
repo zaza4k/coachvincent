@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-	<h3><%= @programme.title %></h3>
-</p>
+<div class="row">
+	<div class="twelve columns">
+		<h2><%= @programme.title %></h2>
+
+
+
 
 <p>
   <%= @programme.intro %>
@@ -17,6 +20,11 @@
   <%= @programme.outro %>
 </p>
 
-
-<%= link_to 'Edit', edit_programme_path(@programme) %> |
-<%= link_to 'Back', programmes_path %>
+		<div class="medium info btn">
+			<%= link_to 'Editer', edit_programme_path(@programme) %>
+		</div>
+		<div class="medium info btn">
+			<%= link_to 'Retour à la liste', programmes_path %>
+		</div>
+	</div>
+</div>

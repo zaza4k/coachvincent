@@ -1,10 +1,8 @@
-<h1>Listing programmes</h1>
+<h1>Liste des programmes</h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Intro</th>
-    <th>Outro</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,16 +10,17 @@
 
 <% @programmes.each do |programme| %>
   <tr>
-    <td><%= programme.title %></td>
-    <td><%= programme.intro %></td>
-    <td><%= programme.outro %></td>
-    <td><%= link_to 'Show', programme %></td>
-    <td><%= link_to 'Edit', edit_programme_path(programme) %></td>
-    <td><%= link_to 'Destroy', programme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><h3><%= programme.title %></h3></td>
+    <td><div class="medium default btn"><%= link_to 'Voir', programme %></div></td>
+    <td><div class="medium default btn"><%= link_to 'Editer', edit_programme_path(programme) %></div></td>
+
+    <td><div class="medium danger btn"><%= link_to 'Supprimer', programme, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></div></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Programme', new_programme_path %>
+<div class="actions medium info btn">
+<%= link_to 'Nouvel exercice', new_exercice_path %>
+</div>
