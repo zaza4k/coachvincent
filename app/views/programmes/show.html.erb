@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="twelve columns">
-    <h3><%= @programme.Title %></h3>
+<p>
+	<h3><%= @programme.title %></h3>
+</p>
 
-<div class="p_intro"><%= simple_format(@programme.Intro) %></div>
+<p>
+  <%= @programme.intro %>
+</p>
 
-<div class="p_content"><%= simple_format(@programme.Contenu) %></div>
+<p>
+  Exercices:<br/>
+  <%= @programme.exercices %>
+</p>
+
+<p>
+  <%= @programme.outro %>
+</p>
 
 
-
-<div class="p_outro"><%= simple_format(@programme.Outro) %></div>
-
-
-<div class="medium info btn">
-  <%= link_to 'Editer', edit_programme_path(@programme) %>
-</div>
-<div class="medium info btn">
-  <%= link_to 'Revenir à la liste', programmes_path %>
-</div>
+<%= link_to 'Edit', edit_programme_path(@programme) %> |
+<%= link_to 'Back', programmes_path %>

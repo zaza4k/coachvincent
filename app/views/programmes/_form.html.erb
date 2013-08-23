@@ -1,46 +1,35 @@
-<fieldset class="twelve columns">
-  <%= form_for(@programme) do |f| %>
-    <% if @programme.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@programme.errors.count, "error") %> a empêché d'être sauvegardé :</h2>
+<%= form_for(@programme) do |f| %>
+  <% if @programme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
 
-        <ul>
-          <% @programme.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <ul>
-    <li class="field">
-      Titre<br />
-      <%= f.text_field :Title, :class => 'text input' %>
-    </li>
-    <li class="field">
-     Intro<br />
-      <%= f.text_area :Intro, :class => 'textarea input' %>
-    </li>
-
-    <%= fields_for(@programme) do |ab| %>
-    <li class="field">
-      <%= ab.label "Tous les exercices" %><br />
-      <%= collection_select(:exercices, :select_id, @all_exercices, :id, :title, {}, {:multiple => true}) %>
-    </li>
-    <% end %>
-
-
-    <li class="field">
-      Contenu du programme<br />
-      <%= f.text_area :Contenu, :class => 'textarea input' %>
-    </li>
-    <li class="field">
-      Outro<br />
-      <%= f.text_area :Outro, :class => 'textarea input' %>
-    </li>
-    <div class="actions medium info btn">
-      <%= f.submit %>
+      <ul>
+      <% @programme.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
-</ul>
-</fieldset>
 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :intro %><br />
+    <%= f.text_area :intro %>
+  </div>
+  <%= fields_for(@programme_exercice) do |ab| %>
+  <div class="field">    
+    <%= ab.label "All exercices" %><br />
+    <%= collection_select(:exercices, :id, @all_exercices, :id, :title, {}, {:multiple => true}) %>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :outro %><br />
+    <%= f.text_area :outro %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

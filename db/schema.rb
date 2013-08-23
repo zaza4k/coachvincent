@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812000733) do
+ActiveRecord::Schema.define(:version => 20130825222521) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,25 +33,31 @@ ActiveRecord::Schema.define(:version => 20130812000733) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "exercices", :force => true do |t|
-    t.string   "title"
+    t.string   "title",       :null => false
     t.text     "description"
-    t.text     "muscles"
+    t.string   "muscles"
     t.text     "conseils"
+    t.string   "series"
+    t.string   "repetitions"
+    t.string   "repos"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "foto"
   end
 
+  create_table "programmeexercices", :force => true do |t|
+    t.integer  "programme_id", :null => false
+    t.integer  "exercice_id",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "programmes", :force => true do |t|
-    t.string   "Title"
-    t.text     "Intro"
-    t.text     "Contenu"
-    t.decimal  "Series"
-    t.decimal  "Repetitions"
-    t.time     "Repos"
-    t.text     "Outro"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "title",      :null => false
+    t.text     "intro"
+    t.text     "outro"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

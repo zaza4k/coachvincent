@@ -5,8 +5,11 @@ describe "exercices/new.html.erb" do
     assign(:exercice, stub_model(Exercice,
       :title => "MyString",
       :description => "MyText",
-      :muscles => "MyText",
-      :conseils => "MyText"
+      :muscles => "MyString",
+      :conseils => "MyText",
+      :series => "MyString",
+      :repetitions => "MyString",
+      :repos => "MyString"
     ).as_new_record)
   end
 
@@ -17,8 +20,11 @@ describe "exercices/new.html.erb" do
     assert_select "form", :action => exercices_path, :method => "post" do
       assert_select "input#exercice_title", :name => "exercice[title]"
       assert_select "textarea#exercice_description", :name => "exercice[description]"
-      assert_select "textarea#exercice_muscles", :name => "exercice[muscles]"
+      assert_select "input#exercice_muscles", :name => "exercice[muscles]"
       assert_select "textarea#exercice_conseils", :name => "exercice[conseils]"
+      assert_select "input#exercice_series", :name => "exercice[series]"
+      assert_select "input#exercice_repetitions", :name => "exercice[repetitions]"
+      assert_select "input#exercice_repos", :name => "exercice[repos]"
     end
   end
 end

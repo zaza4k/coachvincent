@@ -1,10 +1,6 @@
-<h1>Editer le programme</h1>
+<h1>Editing programme</h1>
 
 <%= render 'form' %>
 
-<div class="medium default btn">
-	<%= link_to 'Voir', @programme %>
-</div>
-<div class="medium default btn">
-	<%= link_to 'Retour à la liste', programmes_path %>
-</div>
+<%= link_to 'Show', @programme %> |
+<%= link_to 'Back', programmes_path %>

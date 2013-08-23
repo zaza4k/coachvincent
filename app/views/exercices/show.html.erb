@@ -1,35 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-	<div class="twelve columns">
-		<h2><%= @exercice.title %></h2>
-		<%= image_tag @exercice.foto_url.to_s if @exercice.foto? %>
-		
-		<section class="tabs">
-			<ul class="tab-nav">
-				<li class="active"><a href="#">Contenu de l'exercice</a></li>
-				<li><a href="#">Muscles</a></li>
-				<li><a href="#">Conseils</a></li>				
-			</ul>
-			<div class="tab-content">
-				<%= @exercice.description %>
-			</div>
-			<div class="tab-content">
-				<%= @exercice.muscles %>
-			</div>
-			<div class="tab-content">
-				<%= @exercice.conseils %>
-			</div>
-		</section>
+<p>
+  <b>Title:</b>
+  <%= @exercice.title %>
+</p>
 
-		<div class="medium info btn">
-			<%= link_to 'Editer', edit_exercice_path(@exercice) %>
-		</div>
-		<div class="medium info btn">
-			<%= link_to 'Retour à la liste', exercices_path %>
-		</div>
-	</div>
-</div>
+<p>
+  <b>Description:</b>
+  <%= @exercice.description %>
+</p>
+
+<p>
+  <b>Muscles:</b>
+  <%= @exercice.muscles %>
+</p>
+
+<p>
+  <b>Conseils:</b>
+  <%= @exercice.conseils %>
+</p>
+
+<p>
+  <b>Series:</b>
+  <%= @exercice.series %>
+</p>
+
+<p>
+  <b>Repetitions:</b>
+  <%= @exercice.repetitions %>
+</p>
+
+<p>
+  <b>Repos:</b>
+  <%= @exercice.repos %>
+</p>
 
 
-
+<%= link_to 'Edit', edit_exercice_path(@exercice) %> |
+<%= link_to 'Back', exercices_path %>

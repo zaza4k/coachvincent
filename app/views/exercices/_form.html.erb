@@ -1,42 +1,45 @@
- <fieldset class="twelve columns">
-    <%= form_for (@exercice), :html => {:multipart => true} do |f| %>
-      <% if @exercice.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@exercice.errors.count, "error") %> prohibited this exercice from being saved:</h2>
+<%= form_for(@exercice) do |f| %>
+  <% if @exercice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercice.errors.count, "error") %> prohibited this exercice from being saved:</h2>
 
-          <ul>
-          <% @exercice.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
+      <ul>
+      <% @exercice.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
-    <ul>
-       <li class="field">
-       Photo de l'exercice<br />
-        <%= f.file_field :foto %>
-      </li>
-      <li class="field">
-       Titre<br />
-        <%= f.text_field :title, :class => 'text input' %>
-      </li>
-      <li class="field">
-       Contenu de l'exercice<br />
-        <%= f.text_area :description, :class => 'textarea input' %>
-      </li>
-      <li class="field">
-        Muscles<br />
-        <%= f.text_area :muscles, :class => 'text input' %>
-      </li>
-      <li class="field">
-        Conseils<br />
-        <%= f.text_area :conseils, :class => 'textarea input' %>
-      </li>
-    </ul>
-      <div class="medium info btn">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </fieldset>
+      </ul>
+    </div>
+  <% end %>
 
-
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :muscles %><br />
+    <%= f.text_field :muscles %>
+  </div>
+  <div class="field">
+    <%= f.label :conseils %><br />
+    <%= f.text_area :conseils %>
+  </div>
+  <div class="field">
+    <%= f.label :series %><br />
+    <%= f.text_field :series %>
+  </div>
+  <div class="field">
+    <%= f.label :repetitions %><br />
+    <%= f.text_field :repetitions %>
+  </div>
+  <div class="field">
+    <%= f.label :repos %><br />
+    <%= f.text_field :repos %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

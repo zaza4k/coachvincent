@@ -5,8 +5,11 @@ describe "exercices/show.html.erb" do
     @exercice = assign(:exercice, stub_model(Exercice,
       :title => "Title",
       :description => "MyText",
-      :muscles => "MyText",
-      :conseils => "MyText"
+      :muscles => "Muscles",
+      :conseils => "MyText",
+      :series => "Series",
+      :repetitions => "Repetitions",
+      :repos => "Repos"
     ))
   end
 
@@ -17,8 +20,14 @@ describe "exercices/show.html.erb" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/MyText/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/MyText/)
+    rendered.should match(/Muscles/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/MyText/)
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    rendered.should match(/Series/)
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    rendered.should match(/Repetitions/)
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    rendered.should match(/Repos/)
   end
 end

@@ -1,7 +1,8 @@
 class Programme < ActiveRecord::Base
-	has_many :exercices
+  attr_accessible :intro, :outro, :title
 
-	validates :Title, :presence => true
+  validates :title, :presence => true
 
-  	attr_accessible :Contenu, :Intro, :Outro, :Title, :exercices
+  has_many :programmeexercices
+  has_many :exercices, :through => :programmeexercices
 end

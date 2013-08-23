@@ -1,9 +1,7 @@
-﻿class ProgrammesController < ApplicationController
-before_filter :authenticate_admin!
+class ProgrammesController < ApplicationController
   # GET /programmes
   # GET /programmes.json
   def index
-    @title = "Programmes"
     @programmes = Programme.all
 
     respond_to do |format|
@@ -14,7 +12,7 @@ before_filter :authenticate_admin!
 
   # GET /programmes/1
   # GET /programmes/1.json
-  def show    
+  def show
     @programme = Programme.find(params[:id])
 
     respond_to do |format|
@@ -26,10 +24,11 @@ before_filter :authenticate_admin!
   # GET /programmes/new
   # GET /programmes/new.json
   def new
-    @title = "Nouveau programme"
     @programme = Programme.new
 
     @all_exercices = Exercice.all
+
+    @programme_exercice = @programme.programmeexercices.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +39,10 @@ before_filter :authenticate_admin!
   # GET /programmes/1/edit
   def edit
     @programme = Programme.find(params[:id])
+
+    @all_exercices = Exercice.all
+
+    @programme_exercice = @programme.programmeexercices.build
   end
 
   # POST /programmes
@@ -47,9 +50,15 @@ before_filter :authenticate_admin!
   def create
     @programme = Programme.new(params[:programme])
 
+    params[:exercices][:id].each do |exercice|
+      if !exercice.empty?
+        @programme.programmeexercices.build(:exercice_id => exercice)
+      end
+    end
+
     respond_to do |format|
       if @programme.save
-        format.html { redirect_to @programme, notice: 'Le programme a été sauvegardé avec succès.' }
+        format.html { redirect_to @programme, notice: 'Programme was successfully created.' }
         format.json { render json: @programme, status: :created, location: @programme }
       else
         format.html { render action: "new" }
@@ -65,7 +74,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @programme.update_attributes(params[:programme])
-        format.html { redirect_to @programme, notice: 'Le programme a été mis à jour avec succès.' }
+        format.html { redirect_to @programme, notice: 'Programme was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

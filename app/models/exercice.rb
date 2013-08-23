@@ -1,12 +1,8 @@
 class Exercice < ActiveRecord::Base
-	belongs_to :programme
+  attr_accessible :title, :description, :muscles, :conseils, :series, :repetitions, :repos
 
-	validates :title, :presence => true
+  validates :title, :presence => true
 
-  attr_accessible :foto, :conseils, :description, :muscles, :title
-  mount_uploader :foto, FotoUploader
-
-  validates_integrity_of :foto
-  validates_processing_of :foto
-
+  has_many :programmeexercices
+  has_many :programmes, :through => :programmeexercices
 end

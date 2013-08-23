@@ -1,9 +1,7 @@
-﻿class ExercicesController < ApplicationController
-before_filter :authenticate_admin!
+class ExercicesController < ApplicationController
   # GET /exercices
   # GET /exercices.json
   def index
-    @title = "Exercices"
     @exercices = Exercice.all
 
     respond_to do |format|
@@ -26,7 +24,6 @@ before_filter :authenticate_admin!
   # GET /exercices/new
   # GET /exercices/new.json
   def new
-    @title = "Nouvel exercice"
     @exercice = Exercice.new
 
     respond_to do |format|
@@ -47,7 +44,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @exercice.save
-        format.html { redirect_to @exercice, notice: 'Exercice sauvegardé avec succès.' }
+        format.html { redirect_to @exercice, notice: 'Exercice was successfully created.' }
         format.json { render json: @exercice, status: :created, location: @exercice }
       else
         format.html { render action: "new" }
@@ -63,7 +60,7 @@ before_filter :authenticate_admin!
 
     respond_to do |format|
       if @exercice.update_attributes(params[:exercice])
-        format.html { redirect_to @exercice, notice: 'Exercice mis à jour avec succès.' }
+        format.html { redirect_to @exercice, notice: 'Exercice was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -83,6 +80,4 @@ before_filter :authenticate_admin!
       format.json { head :no_content }
     end
   end
-
-
 end

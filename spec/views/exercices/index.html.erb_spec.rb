@@ -6,14 +6,20 @@ describe "exercices/index.html.erb" do
       stub_model(Exercice,
         :title => "Title",
         :description => "MyText",
-        :muscles => "MyText",
-        :conseils => "MyText"
+        :muscles => "Muscles",
+        :conseils => "MyText",
+        :series => "Series",
+        :repetitions => "Repetitions",
+        :repos => "Repos"
       ),
       stub_model(Exercice,
         :title => "Title",
         :description => "MyText",
-        :muscles => "MyText",
-        :conseils => "MyText"
+        :muscles => "Muscles",
+        :conseils => "MyText",
+        :series => "Series",
+        :repetitions => "Repetitions",
+        :repos => "Repos"
       )
     ])
   end
@@ -25,8 +31,14 @@ describe "exercices/index.html.erb" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => "Muscles".to_s, :count => 2
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "tr>td", :text => "Series".to_s, :count => 2
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "tr>td", :text => "Repetitions".to_s, :count => 2
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "tr>td", :text => "Repos".to_s, :count => 2
   end
 end
