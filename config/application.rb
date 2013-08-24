@@ -65,3 +65,4 @@ module Coachvincent
 
     config.compass.sass_dir = "app/assets/components/gumby"
 end
+end
