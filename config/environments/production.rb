@@ -16,7 +16,7 @@ Coachvincent::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.initialize_on_precompile = false
-  config.assets.compile = true
+  config.assets.compile = false
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
   # Add the fonts path
