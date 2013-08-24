@@ -13,7 +13,10 @@ class ProgrammesController < ApplicationController
   # GET /programmes/1
   # GET /programmes/1.json
   def show
-    @programme = Programme.find(params[:id])
+
+
+    @programme = Programme.includes(:exercices).find(params[:id])
+
 
     respond_to do |format|
       format.html # show.html.erb

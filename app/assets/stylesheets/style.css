@@ -64,38 +64,7 @@ h1, h2, h3, h4, h5 {
     position: relative;
     text-align: center;
 }
-.navbar {
-  background: #FF8B00;
-  height: 30px;
-  min-height: 0px;
-  margin-bottom: 50px;
-  padding: 0px 0; 
-}
-.navbar .branding {
-  color: #fff;
-  font-weight: bold;
-  line-height: 30px;
-}
-.navbar ul li {
-  line-height: auto;
-}
-.navbar ul li > a {
-   text-shadow: none;
-   color: #f5f5f5;
-   font-size: 12px;
-   margin: 0;
-   height: 30px;
-   line-height: 30px;
-}
-.navbar ul li > a:hover, .navbar ul li > a:active, .navbar ul li > a:focus {
-  background: rgba(255,255,255,.1)!important;
-}
-.navbar li .dropdown ul > li a {
-  color: #ff8b00;
-  border-bottom: none;
-  font-size: 12px;
-  width: auto;
-}
+
 
 img.nav_pic {
   vertical-align:  middle;

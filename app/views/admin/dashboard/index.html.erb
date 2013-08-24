@@ -1,37 +1,29 @@
 <div class="row">
 	<div  class="twelve columns">
 
+	    <p>Bienvenue sur ton tableau de bord, <%= link_to current_admin do %><%= current_admin.email %><% end %> !</p>
 
-	    <ul id="grid" class="two_up tiles">
-		    <li>
-		        <a href="/programmes/new">
-		            <span class="h-icon h-icon-npro"></span>
-		            <h3 class="h-title">Nouveau programme</h3>
-		            <span class="h-category">Créer</span>
-		        </a>
-		    </li>
-		    <li>
-		        <a href="/exercices/new">
-		            <span class="h-icon h-icon-nexo"></span>
-		            <h3 class="h-title">Nouvel exercice</h3>
-		            <span class="h-category">Créer</span>
-		        </a>
-		    </li>
-		    <li>
-		        <a href="/programmes">
-		            <span class="h-icon h-icon-pro"></span>
-		            <h3 class="h-title">Les programmes</h3>
-		            <span class="h-category">Liste</span>
-		        </a>
-		    </li>
-		   <li>
-		        <a href="/exercices">
-		            <span class="h-icon h-icon-exo"></span>
-		            <h3 class="h-title">Les exercices</h3>
-		            <span class="h-category">Liste</span>
-		        </a>
-		    </li>
-		</ul>
+	   <script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+});
+</script>
+<p>Demonstrate fadeIn() with different parameters.</p>
+<button>Click to fade in boxes</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+
+
+
+
+
 
 
 	</div>

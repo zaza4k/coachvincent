@@ -1,27 +1,32 @@
-<h1>Liste des exercices</h1>
-
-<% @exercices.each do |exercice| %>
-
-<article class="valign row">
+<div class="row">
+  <section class="twelve columns">
+    <article class="valign row">
       <div>
-        <%= image_tag exercice.foto.preview.url %>
+        <h1>Liste des exercices</h1>
       </div>
-      <div>
-        <h4><%= exercice.title %></h4>
-        <P>
-          <%= link_to 'Voir', exercice, :class => 'small default btn' %>
-          <%= link_to 'Editer', edit_exercice_path(exercice), :class => 'small default btn' %>
-          <%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small default btn' %>
-        </P>
+      <div class="actions medium info btn pull_right icon-right entypo icon-plus-squared">
+        <%= link_to 'Nouvel exercice', new_exercice_path %>
       </div>
-</article>
-<% end %>
+    </article>
+    <% @exercices.each do |exercice| %>
 
-
-
+    <article class="valign row">
+          <div>
+            <%= image_tag exercice.foto.preview.url %>
+          </div>
+          <div>
+            <h4><%= exercice.title %></h4>
+            <P>
+              <%= link_to 'Voir', exercice, :class => 'small default btn' %>
+              <%= link_to 'Editer', edit_exercice_path(exercice), :class => 'small default btn' %>
+              <%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small warning btn' %>
+            </P>
+          </div>
+    </article>
+    <% end %>
+  </section>
+</div>
 
  
 
-<div class="actions medium info btn">
-<%= link_to 'Nouvel exercice', new_exercice_path %>
-</div>
+

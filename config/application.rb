@@ -60,9 +60,17 @@ module Coachvincent
     config.assets.version = '1.0'
 
     # add app/assets/fonts to the asset path
-    config.assets.paths << Rails.root.join('app', 'assets') 
-
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts') 
     config.assets.initialize_on_precompile = false
+
+    config.compass.sass_dir = "app/assets/components/gumby"
+
+      # Adding Webfonts to the Asset Pipeline
+  config.assets.precompile << Proc.new { |path|
+    if path =~ /\.(eot|svg|ttf|woff)\z/
+      true
+    end
+  }
 
   end
 end

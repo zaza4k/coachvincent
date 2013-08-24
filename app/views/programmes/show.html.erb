@@ -7,18 +7,28 @@
 
 
 
-<p>
-  <%= @programme.intro %>
-</p>
+<div class="p_intro">
+  <%= simple_format(@programme.intro) %>
+</div>
 
-<p>
-  Exercices:<br/>
-  <%= @programme.exercices %>
-</p>
 
-<p>
-  <%= @programme.outro %>
-</p>
+  <% @programme.exercices.each do |exercice| %>
+  <div id="p-content">
+  		<ul>
+		  <li class="e-title"><span>Exercice - </span><%= exercice.title %></li>
+		  <li><%= exercice.description %></li>
+		  <li class="e-sep"></li>
+		  <li><span>Conseils : </span><%= exercice.conseils %></li>	  
+		  <li><span>Séries : </span><%= exercice.series %> séries de <%= exercice.repetitions %> répétitions</li>
+		  <li><span>Repos : </span><%= exercice.repos %> de repos en chaque série</li>
+		  <li><span>Muscles visés : </span><%= exercice.muscles %></li>
+		</ul>
+	</div>
+<% end %>
+
+<div class="p_outro">
+  <%= simple_format(@programme.outro) %>
+</div>
 
 		<div class="medium info btn">
 			<%= link_to 'Editer', edit_programme_path(@programme) %>
