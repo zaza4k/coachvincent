@@ -15,18 +15,11 @@ Coachvincent::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.compile = false
   config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
   # Add the fonts path
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-
-  # Adding Webfonts to the Asset Pipeline
-  config.assets.precompile << Proc.new { |path|
-    if path =~ /\.(eot|svg|ttf|woff)\z/
-      true
-    end
-  }
 
   # Generate digests for assets URLs
   config.assets.digest = true
