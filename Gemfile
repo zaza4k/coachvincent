@@ -13,20 +13,19 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 
-
-
+  gem 'compass-rails'
+  gem 'compass'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'modernizr-rails'
   gem 'modular-scale'
-  gem 'compass-rails'
-  gem 'compass'
   gem 'gumby-framework'
   gem 'uglifier', '>= 1.0.3'
 end
