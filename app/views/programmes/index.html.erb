@@ -1,5 +1,9 @@
 <h1>Liste des programmes</h1>
 
+<div class="actions medium info btn pull_right icon-right entypo icon-plus-squared">
+<%= link_to 'Nouveau programme', new_programme_path %>
+</div>
+
 <table>
   <tr>
     <th></th>
@@ -18,9 +22,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<div class="actions medium info btn">
-<%= link_to 'Nouvel exercice', new_exercice_path %>
-</div>

@@ -7,3 +7,13 @@
 #p-content .e-sep {
 	height: 25px;
 }
+#p-select {
+	width: 500px;
+	height: 300px;
+	font-weight: bold;
+	overflow: auto;
+}
+.title {
+	margin: 10px 0;
+}
+

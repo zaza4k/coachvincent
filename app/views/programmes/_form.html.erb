@@ -21,12 +21,30 @@
        Introduction<br />
         <%= f.text_area :intro, :class => 'textarea input' %>
       </li>
-      <%= fields_for(@programme_exercice) do |ab| %>
-      <li class="field row">    
-        <%= ab.label "Choisissez les exercices du programme :" %>       
-        <%= collection_select(:exercices, :id, @all_exercices, :id, :title, {}, {:multiple => true}) %>      
+      <li class="field">
+      <span class="title">Choisissez les exercices :</span>
+      <li id="p-select">
+        <% for exercice in Exercice.find(:all) %>
+        <div class="row">
+          <section class="twelve columns">
+            <article class="valign row">
+              <div>
+                <label class="checkbox">
+                  <%= check_box_tag "checkboxInput", exercice.id, @programme.exercices.include?(exercice) %>
+                  <%= image_tag exercice.foto.preview.url %>                  
+                </label> 
+              </div>
+              <div>
+                <h3><%= exercice.title %></h3>
+              </div>                       
+          </article>
+          <% end %>
+          </section>
+        </div>
       </li>
-      <% end %>
+    </li>
+
+
       <li class="field">
       Pas assez de choix ?<br />
         <div class="actions small default btn">
