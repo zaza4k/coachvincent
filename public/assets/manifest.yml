@@ -13,8 +13,8 @@ gumby/bower.json: gumby/bower-703be7664ae4b1a1ff359479a6685140.json
 gumby/bower/index.json: gumby/bower-703be7664ae4b1a1ff359479a6685140.json
 gumby/composer.json: gumby/composer-6c73741406bac7da4fb6c2b18cce643f.json
 gumby/composer/index.json: gumby/composer-6c73741406bac7da4fb6c2b18cce643f.json
-gumby/config.rb: gumby/config-a1414e3e86bc2feaea97f3bfe9349737.rb
-gumby/config/index.rb: gumby/config-a1414e3e86bc2feaea97f3bfe9349737.rb
+gumby/config.rb: gumby/config-6d2aaf4e27f89add51232bf7b40ec053.rb
+gumby/config/index.rb: gumby/config-6d2aaf4e27f89add51232bf7b40ec053.rb
 gumby/demo.html: gumby/demo-f2b92c9bf8f03215655a53b8706f7764.html
 gumby/demo/index.html: gumby/demo-f2b92c9bf8f03215655a53b8706f7764.html
 gumby/facebook.jpg: gumby/facebook-a3150ee895f3d7297585e8522838b376.jpg
@@ -49,10 +49,10 @@ gumbyui-extras/contributing.md: gumbyui-extras/contributing-e59160781afcafe46a23
 gumbyui-extras/contributing/index.md: gumbyui-extras/contributing-e59160781afcafe46a232441cd033fb0.md
 missing.png: missing-0086d12d2bb16da5eb1fccd763016df7.png
 missing/index.png: missing-0086d12d2bb16da5eb1fccd763016df7.png
-application.js: application-c77572addfe6c2a1acc2acd1efe30326.js
-application/index.js: application-c77572addfe6c2a1acc2acd1efe30326.js
-application.css: application-a7ced739ead22a3ea66db851c08fd921.css
-application/index.css: application-a7ced739ead22a3ea66db851c08fd921.css
+application.js: application-8b06d3a7e859ecf9fde8de829b34c804.js
+application/index.js: application-8b06d3a7e859ecf9fde8de829b34c804.js
+application.css: application-bd689b277ef200c939bb5e57e40ac8c2.css
+application/index.css: application-bd689b277ef200c939bb5e57e40ac8c2.css
 config.rb: config-7cd653a8021e7edab25da177512fb87e.rb
 config/index.rb: config-7cd653a8021e7edab25da177512fb87e.rb
 humans.txt: humans-8a041cb23e384912f701bb9cf871decc.txt

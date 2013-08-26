@@ -62,7 +62,5 @@ module Coachvincent
 
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-
-    config.compass.sass_dir = "app/assets/components/gumby"
 end
 end
