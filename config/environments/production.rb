@@ -20,7 +20,7 @@ Coachvincent::Application.configure do
   config.assets.compile = false
 
   # Add the fonts path
-  config.assets.paths << Rails.root.join('app', 'assets')
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Generate digests for assets URLs
   config.assets.digest = true
