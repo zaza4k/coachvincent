@@ -20,7 +20,7 @@ Coachvincent::Application.configure do
 
   config.assets.js_compressor = :closure
 
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Add the fonts path
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
