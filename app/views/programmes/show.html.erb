@@ -12,8 +12,8 @@
 </div>
 
 
-  <% @programme.exercices.each do |exercice| %>
-  <div id="p-content">
+  
+  <div id="p-content"><% @programme.exercices.each do |exercice| %>
   		<ul>
 		  <li class="e-title"><span>Exercice - </span><%= exercice.title %></li>
 		  <li><%= exercice.description %></li>
@@ -22,9 +22,9 @@
 		  <li><span>Séries : </span><%= exercice.series %> séries de <%= exercice.repetitions %> répétitions</li>
 		  <li><span>Repos : </span><%= exercice.repos %> de repos en chaque série</li>
 		  <li><span>Muscles visés : </span><%= exercice.muscles %></li>
-		</ul>
+		</ul><% end %>
 	</div>
-<% end %>
+
 
 <div class="p_outro">
   <%= simple_format(@programme.outro) %>

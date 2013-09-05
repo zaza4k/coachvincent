@@ -11,12 +11,8 @@ gem 'jquery-rails'
 
 group :assets do  
   gem 'uglifier', '>= 1.0.3'
-  gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'modernizr-rails'
-  gem 'modular-scale'
-  gem 'gumby-framework'
 end
 
 group :development do

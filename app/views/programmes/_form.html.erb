@@ -17,33 +17,18 @@
        Titre<br />
         <%= f.text_field :title, :class => 'text input' %>
       </li>
+
       <li class="field">
        Introduction<br />
         <%= f.text_area :intro, :class => 'textarea input' %>
       </li>
-      <li class="field">
-      <span class="title">Choisissez les exercices :</span>
-      <li id="p-select">
-        <% for exercice in Exercice.find(:all) %>
-        <div class="row">
-          <section class="twelve columns">
-            <article class="valign row">
-              <div>
-                <label class="checkbox">
-                  <%= check_box_tag "checkboxInput", exercice.id, @programme.exercices.include?(exercice) %>
-                  <%= image_tag exercice.foto.preview.url %>                  
-                </label> 
-              </div>
-              <div>
-                <h3><%= exercice.title %></h3>
-              </div>                       
-          </article>
-          <% end %>
-          </section>
-        </div>
-      </li>
-    </li>
 
+      <%= fields_for(@programme_exercice) do |ab| %>
+      <li class="field">
+        <label>Choisir les exercices : </label>   
+        <%= collection_select(:exercices, :id, @all_exercices, :id, :title, {}, {:multiple => true}) %>
+      </li>
+      <% end %>
 
       <li class="field">
       Pas assez de choix ?<br />
@@ -51,11 +36,13 @@
       <%= link_to 'Créer un nouvel exercice', new_exercice_path %>
       </div>
       </li>
+
       <li class="field">
         Conclusion<br />
         <%= f.text_area :outro, :class => 'textarea input' %>
       </li>
     </ul>
+    
     <div class="medium info btn">
       <%= f.submit %>
     </div>

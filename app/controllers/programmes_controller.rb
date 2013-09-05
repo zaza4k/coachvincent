@@ -57,6 +57,7 @@ class ProgrammesController < ApplicationController
       if !exercice.empty?
         @programme.programmeexercices.build(:exercice_id => exercice)
       end
+
     end
 
     respond_to do |format|

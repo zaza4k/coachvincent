@@ -1,11 +1,5 @@
 Coachvincent::Application.routes.draw do
 
-  resources :exercices
-
-
-  resources :programmes
-
-
   get "admin/dashboard"
   get "pages/home"
   get "pages/exercices"
