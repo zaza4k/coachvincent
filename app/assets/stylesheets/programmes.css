@@ -7,3 +7,6 @@
 #p-content .e-sep {
 	height: 25px;
 }
+#p-content li {
+	list-style-type: none;
+}

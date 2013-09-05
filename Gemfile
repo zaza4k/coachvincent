@@ -8,6 +8,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'jquery-rails'
+gem 'gibbon'
 
 group :assets do  
   gem 'uglifier', '>= 1.0.3'
@@ -15,7 +16,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
    # Add Foundation Here
   gem 'compass-rails' # you need this or you get an err
-  gem 'zurb-foundation'
+  gem 'zurb-foundation', '~> 4.3.1'
 end
 
 group :development do
