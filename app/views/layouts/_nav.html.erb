@@ -1,61 +1,59 @@
-			    <% if admin_signed_in? %>
-			    <div gumby-fixed="top" class="navbar" id="nav">
-			    	<div class="row">
-			        <a class="toggle" gumby-trigger="#nav > .row > ul" href="#"><i class="icon-menu"></i></a>
-			          
-			            	<%= link_to 'CoachVincent', root_path, {:class => 'two columns branding'} %>
-			            	</a>
-			        	
-			           
-			            <ul class="eight columns">
-							<li class="pull_right"><% if admin_signed_in? %>
-							  		<%= link_to current_admin do %>
-									  <%= image_tag current_admin.avatar.thumb.url, :class =>"nav_pic" %>
-									  <span class="nav_email"><%= current_admin.email %></span>
-									<% end %>							  
-							  	<div class="dropdown">
-								  	<ul>				                		
-				                		<li>
-											<%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %>
-										</li>
-										<li><%= link_to "Créer un nouvel exercice", :controller => "/exercices", :action => "new"  %></li>
-				                		<li><%= link_to "Voir tous les exercices", exercices_path %></li>
-				                		<li><%= link_to "Créer un nouveau programme", :controller => "/programmes", :action => "new", :id => @programmes %></li>
-				                		<li><%= link_to "Voir tous les programmes", programmes_path %></li>
-										<li>
-											<%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %>        
-										</li>
-										<% else %>
-										<li>
-										  <%= link_to('Se connecter', new_admin_session_path)  %>
-										</li>
-										<% end %>			                			
-				                	</ul>
-				                </div>
-							</li>	      	
-			            </ul>
-			        </div>			      
-			    </div> 
-			    <% else %>
-		      <div gumby-fixed="top" class="navbar" id="nav">
-		    	<div class="row">
-		        <a class="toggle" gumby-trigger="#nav > .row > ul" href="#"><i class="icon-menu"></i></a>
-		          
-		            	<%= link_to 'CoachVincent', root_path, {:class => 'two columns branding'} %>
-		            	</a>
-		            <ul class="eight columns pull_right">		                
-						<li>
-						  <%= link_to('Se connecter', new_admin_session_path)  %>
-						</li>								      	
-		            </ul>
-		        </div>			      
-			   </div> 
-			   <% end %>
+<nav class="top-bar" data-options="is_hover:false">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#">Du Sport Pour Tous </a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+<% if admin_signed_in? %>
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="#">Programmes</a>
 
+        <ul class="dropdown">          
+          <li><%= link_to "Créer un nouveau programme", :controller => "/programmes", :action => "new", :id => @programmes %></li>
+          <li><%= link_to "Voir tous les programmes", programmes_path %></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li class="has-dropdown"><a href="#">Exercices</a>
 
+        <ul class="dropdown">          
+          <li><%= link_to "Créer un nouvel exercice", :controller => "/exercices", :action => "new"  %></li>
+          <li><%= link_to "Voir tous les exercices", exercices_path %></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li><a href="#">Dico des sports</a></li>
+      <li class="divider"></li>
+    </ul>
 
-
-
-
-
-			   
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown">
+			<%= link_to current_admin do %>
+				<%= current_admin.email %>
+			<% end %>
+        <ul class="dropdown">
+          <li><label>Gérer le profil</label></li>
+          <li><%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %></li>		  
+          <li class="divider"></li>
+          <li><label>Quitter la session</label></li>
+          <li><%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %></li>
+        </ul>
+<% else %>
+		<ul class="right">
+	      <li class="has-form">
+	        <%= link_to 'Se connecter', new_admin_session_path, {:class => 'button'}  %>
+	      </li>
+	    </ul>
+        <% end %>
+      </li>      
+    </ul>
+  </section>
+</nav>

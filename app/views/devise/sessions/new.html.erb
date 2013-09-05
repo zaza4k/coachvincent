@@ -1,34 +1,19 @@
-<div id="wrapper-login">
-<div class="row" id="login">
-	<fieldset class="twelve columns">
-		<ul>
-
-			<h1>CoachVincent</h1>
+<ul>
 
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-			  <li class="prepend field">			
-			 	<span class="adjoined">@</span>
+			  
 			 	<%= f.text_field :email , :class => 'wide email input', :placeholder => 'Adresse email' %>
-			</li>
 
-			 <li class="prepend field">
-			  	<span class="adjoined">¤</span>
+
 			 	<%= f.password_field :password, :class => 'wide password input', :placeholder => 'Mot de passe' %>
-			</li>
 
-			 <label class="checkbox" for="admin_remember_me">
+			  	<%= f.submit "Se connecter", {:class => 'large button expand'} %><br />
+			  	<label class="checkbox text-center" for="admin_remember_me">
 			  <% if devise_mapping.rememberable? -%>
 			    <%= f.check_box :remember_me %> <span></span> Se souvenir de moi ?
 			  <% end -%>
 			 </label>
-
-			<div class="xlarge info btn" id="login-btn">
-			  	<%= f.submit "Se connecter" %>
-			</div></br>
 			<%= render "devise/shared/links" %>
-			<% end %>
+			<% end %>			
+</ul>
 
-			
-		</ul>
-	</fieldset>	
-</div>

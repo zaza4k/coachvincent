@@ -18,7 +18,7 @@ Coachvincent::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.initialize_on_precompile = false
 
-  config.assets.js_compressor = :closure
+  config.assets.js_compressor = :uglifier
 
   config.assets.compile = true
 

@@ -13,14 +13,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+   # Add Foundation Here
+  gem 'compass-rails' # you need this or you get an err
+  gem 'zurb-foundation'
 end
 
 group :development do
   gem 'rspec-rails', '2.5.0'
-end
-
-group :production do
-  gem 'thin'
 end
 
 group :test do
