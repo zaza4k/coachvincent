@@ -8,7 +8,6 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'jquery-rails'
-gem 'gibbon'
 
 group :assets do  
   gem 'uglifier', '>= 1.0.3'
