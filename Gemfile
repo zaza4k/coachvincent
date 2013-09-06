@@ -8,6 +8,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'jquery-rails'
+gem 'turbolinks'
 
 group :assets do  
   gem 'uglifier', '>= 1.0.3'
