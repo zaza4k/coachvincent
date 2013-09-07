@@ -1,26 +1,16 @@
-<div class="row" id="login">
-	<fieldset class="twelve columns">
-		<ul>
-
-			<h1>CoachVincent</h1>
-			<h5>Mot de passe oublié ?</h5>
+			<h4>Mot de passe oublié ?</h4>
 
 			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
 			  <%= devise_error_messages! %>
-			  <li class="prepend field">			
-			 	<span class="adjoined">@</span>
-			 	<%= f.text_field :email, :class => 'wide email input', :placeholder => 'Votre adresse email' %>
-			</li>
 
-			<div class="xlarge info btn" id="login-btn">
-			  	<%= f.submit "Recevoir mon mot de passe" %>
-			</div></br>
+			 	<%= f.text_field :email, :placeholder => 'Inscrivez votre adresse email ici...' %>
+
+			  	<%= f.submit "Recevoir mon mot de passe", :class => 'button' %>
 			<%= render "devise/shared/links" %>
 			<% end %>
 
 			
 
 			
-		</ul>
-	</fieldset>	
-</div>
+
+

@@ -45,14 +45,16 @@
           <li><label>Quitter la session</label></li>
           <li><%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %></li>
         </ul>
-<% else %>
-		<ul class="right">
-	      <li class="has-form">
-	        <%= link_to 'Se connecter', new_admin_session_path, {:class => 'button'}  %>
-	      </li>
-	    </ul>
-        <% end %>
       </li>      
     </ul>
   </section>
+  <% else %>
+  <section class="top-bar-section">
+    <ul class="right">
+       <li class="has-form">
+        <%= link_to raw("<i class=\"icon-lock icon-white icon-large\">&nbsp; Se connecter</i>"), new_admin_session_path, {:class => 'button'}  %>
+      </li>       
+      </ul>
+  </section>
+        <% end %>
 </nav>

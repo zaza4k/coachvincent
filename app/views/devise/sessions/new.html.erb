@@ -1,6 +1,7 @@
 <div class='row'>
 
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
 			<div class="email-field">
 			 	<%= f.text_field :email, :placeholder => 'Adresse email' %>
 			</div>
@@ -8,7 +9,10 @@
 			 	<%= f.password_field :password, :placeholder => 'Mot de passe' %>
 			 </div>
 
-			  	<%= f.submit "Se connecter", {:class => 'large button expand'} %><br />
+			  	
+			  	<%= button_tag(:type => 'submit', :class => 'large button expand') do %>
+				<i class="icon-unlock icon-white"></i> Se connecter
+				<% end %>
 			  	<label class="checkbox text-center" for="admin_remember_me">
 			  <% if devise_mapping.rememberable? -%>
 			    <%= f.check_box :remember_me %> <span></span> Se souvenir de moi ?

@@ -9,6 +9,7 @@ gem 'carrierwave'
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'font-awesome-rails'
 
 group :assets do  
   gem 'uglifier', '>= 1.0.3'
