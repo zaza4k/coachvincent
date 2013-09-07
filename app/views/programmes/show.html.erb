@@ -31,10 +31,17 @@
 </div>
 
 		<div class="medium info btn">
-			<%= link_to 'Editer', edit_programme_path(@programme) %>
+			
 		</div>
 		<div class="medium info btn">
-			<%= link_to 'Retour à la liste', programmes_path %>
+			
 		</div>
 	</div>
+</div>
+
+<div class="row">
+  <ul class="button-group round even-2">
+    <li><%= link_to 'Editer', edit_programme_path(@programme), :class => 'button secondary' %></li>
+    <li><%= link_to 'Retour à la liste', programmes_path, :class => 'button secondary' %></li>
+  </ul>
 </div>

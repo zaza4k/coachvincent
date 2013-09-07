@@ -1,44 +1,51 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <div class="twelve columns">
-     <article class="valign row">
-      <div>
-        <%= image_tag @exercice.foto.normal.url %>
-      </div>
-      <div>
-        <h2><%= @exercice.title %></h2>
-      </div>
-    </article>
-
-    <section class="pill tabs">
-      <ul class="tab-nav">
-        <li class="active"><a href="#">Contenu de l'exercice</a></li>        
-        <li><a href="#">Muscles</a></li>
-        <li><a href="#">Conseils</a></li>
-        <li><a href="#">Entraînement</a></li> 
-      </ul>
-      <div class="tab-content active">
-        <%= @exercice.description %>
-      </div>
-      <div class="tab-content">
-        <%= @exercice.muscles %>
-      </div>
-      <div class="tab-content">
-        <%= @exercice.conseils %>
-      </div>
-      <div class="tab-content">
-        <p>Séries : <%= @exercice.series %></p>
-        <p>Répétitions : <%= @exercice.repetitions %></p>
-        <p>Repos : <%= @exercice.repos %></p>
-      </div>
-    </section>    
+  <div class="large-6 columns">   
+      <%= image_tag @exercice.foto.normal.url %>
+  </div>
+  <div class="large-6 columns">
+      <h2><%= @exercice.title %></h2>
   </div>
 </div>
 
-<div class="medium info btn">
-        <%= link_to 'Editer', edit_exercice_path(@exercice) %>
-    </div>
-    <div class="medium info btn">
-        <%= link_to 'Retour à la liste', exercices_path %>
-    </div>
+<div class="row">
+  <div class="section-container auto" data-section>
+    <section>
+      <p class="title" data-section-title><a href="#description">Contenu de l'exercice</a></p>
+      <div class="content" data-section-content>
+        <p><%= @exercice.description %></p>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#muscles">Muscles</a></p>
+      <div class="content" data-section-content>
+        <h5>Les muscles travaillés avec cet exercice :</h5>
+        <p><%= @exercice.muscles %></p>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#conseils">Conseils</a></p>
+      <div class="content" data-section-content>
+        <h5>Le conseil du coach :</h5>
+        <p><%= @exercice.conseils %></p>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#entrainement">Entraînement</a></p>
+      <div class="content" data-section-content>
+        <h5>Pour un entraînement optimal, il faut observer les directives suivantes :</h5>
+        <p>Nombre de séries : <%= @exercice.series %></p>
+        <p>Nombre de répétitions : <%= @exercice.repetitions %></p>
+        <p>Temps de repos : <%= @exercice.repos %></p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="row">
+  <ul class="button-group round even-2">
+    <li><%= link_to 'Editer', edit_exercice_path(@exercice), :class => 'button secondary' %></li>
+    <li><%= link_to 'Retour à la liste', exercices_path, :class => 'button secondary' %></li>
+  </ul>
+</div>

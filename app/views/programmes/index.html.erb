@@ -1,13 +1,15 @@
-<h1>Liste des programmes</h1>
-
-<div class="actions medium info btn pull_right icon-right entypo icon-plus-squared">
-<%= link_to 'Nouveau programme', new_programme_path %>
+<div class="row">    
+      <div class="large-6 columns">
+        <h1>Liste des programmes</h1>
+      </div>
+      <div class="right">
+        <i class="fi-[heart]"></i>
+        <%= link_to 'Créer un nouveau programme', new_programme_path, :class => 'button' %>
+      </div>
 </div>
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -15,10 +17,15 @@
 <% @programmes.each do |programme| %>
   <tr>
     <td><h3><%= programme.title %></h3></td>
-    <td><div class="medium default btn"><%= link_to 'Voir', programme %></div></td>
-    <td><div class="medium default btn"><%= link_to 'Editer', edit_programme_path(programme) %></div></td>
-
-    <td><div class="medium danger btn"><%= link_to 'Supprimer', programme, method: :delete, data: { confirm: 'Confirmer la suppression ?' } %></div></td>
+    <td>
+      <div class="button-bar">
+        <ul class="button-group">
+          <li><%= link_to 'Voir', programme, :class => 'small button secondary' %></li>
+          <li><%= link_to 'Editer', edit_programme_path(programme), :class => 'small button secondary' %></li>
+          <li><%= link_to 'Supprimer', programme, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small button secondary' %></li>
+        </ul>
+      </div>
+    </td>
   </tr>
 <% end %>
 </table>

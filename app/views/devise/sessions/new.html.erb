@@ -1,11 +1,12 @@
 <div class='row'>
 
 			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-			  
-			 	<%= f.text_field :email , :class => 'wide email input', :placeholder => 'Adresse email' %>
-
-
-			 	<%= f.password_field :password, :class => 'wide password input', :placeholder => 'Mot de passe' %>
+			<div class="email-field">
+			 	<%= f.text_field :email, :placeholder => 'Adresse email' %>
+			</div>
+			<div class="password-field">
+			 	<%= f.password_field :password, :placeholder => 'Mot de passe' %>
+			 </div>
 
 			  	<%= f.submit "Se connecter", {:class => 'large button expand'} %><br />
 			  	<label class="checkbox text-center" for="admin_remember_me">

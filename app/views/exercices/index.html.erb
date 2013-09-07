@@ -1,31 +1,42 @@
-<div class="row">
-  <section class="twelve columns">
-    <article class="valign row">
-      <div>
+<div class="row">    
+      <div class="large-6 columns">
         <h1>Liste des exercices</h1>
       </div>
-      <div class="actions medium info btn pull_right icon-right entypo icon-plus-squared">
-        <%= link_to 'Nouvel exercice', new_exercice_path %>
+      <div class="right">
+        <%= link_to 'Créer un nouvel exercice', new_exercice_path, :class => 'button' %>
       </div>
-    </article>
-    <% @exercices.each do |exercice| %>
-
-    <article class="valign row">
-          <div>
-            <%= image_tag exercice.foto.preview.url %>
-          </div>
-          <div>
-            <h4><%= exercice.title %></h4>
-            <P>
-              <%= link_to 'Voir', exercice, :class => 'small default btn' %>
-              <%= link_to 'Editer', edit_exercice_path(exercice), :class => 'small default btn' %>
-              <%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small warning btn' %>
-            </P>
-          </div>
-    </article>
-    <% end %>
-  </section>
 </div>
+
+    
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+    <ul class="small-block-grid-2 large-block-grid-3 text-center">
+        <% @exercices.each do |exercice| %>
+        <li>
+          <div>
+            <%= image_tag exercice.foto.thumbs.url, :class => 'th' %>
+          </div>
+          <div>
+              <h5><%= exercice.title %></h5>          
+          </div>
+          <div class="small-10 small-centered columns">
+          <div class="button-bar">
+              <ul class="button-group">
+                <li><%= link_to 'Voir', exercice, :class => 'small button secondary' %></li>
+                <li><%= link_to 'Editer', edit_exercice_path(exercice), :class => 'small button secondary' %></li>
+                <li><%= link_to 'Supprimer', exercice, method: :delete, data: { confirm: 'Confirmer la suppression ?' }, :class => 'small button secondary' %></li>
+              </ul>
+            </div>
+          </div>
+        </li>          
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
+
+
 
  
 
