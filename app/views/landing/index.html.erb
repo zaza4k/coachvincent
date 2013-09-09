@@ -1,28 +1,38 @@
-<div class="row">
+
 	<div class="large-12 columns" id="top-heading">
 		<div class="row">
-			<div class="small-8 columns text-center">
-				<i class="icon-envelope-alt"></i>
-				<span>Nouveau message</span>
-				<h1>Le coach a un message pour vous</h1>
-				<div class="text-center">
-					<a href="#" data-reveal-id="coachvincent_ads" class="button round secondary"><i class="icon-facetime-video icon-large"></i> Je veux voir le message</a>
-				</div>
-			</div>
-			<div class="small-4 columns">
-				<h5><b>Inscrivez-vous</b> dès maintenant</h5>
-				<span>pour être parmi les premiers à accéder à notre nouveau site Internet en exclusivité !</span>
-				<form action="http://dusportpourtous.us7.list-manage.com/subscribe/post" method="POST">
-				<input type="hidden" name="u" value="6a3244444459ec9b0cee577a0">
-				<input type="hidden" name="id" value="b031077859">
+			<div class="large-10 columns large-centered">
+				<div class="row">
+					<div class="large-6 columns text-center" id="message">
+						<i class="icon-envelope-alt"></i>
+						<span>Nouveau message</span>
+						<h1>Le coach a un message pour vous</h1>
+						<div class="text-center">
+							<a href="#" data-reveal-id="coachvincent_ads" class="button round secondary"><i class="icon-facetime-video icon-large"></i> Je veux voir le message</a>
+						</div>
+					</div>
+					<div class="large-5 columns" id="inscription">
+						<h5><b>Inscrivez-vous</b> dès maintenant</h5>
+						<span>pour être parmi les premiers à accéder à notre nouveau site Internet en exclusivité !</span>
+						<form action="http://dusportpourtous.us7.list-manage.com/subscribe/post" method="POST">
+						<input type="hidden" name="u" value="6a3244444459ec9b0cee577a0">
+						<input type="hidden" name="id" value="b031077859">
 
-				<div class="large-12 columns">
-				    <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" placeholder="Entrez votre adresse email et validez.">
-				</div>
-				<div class="large-12 columns">
-					<button type="submit" class="button expand">
-					  <i class="icon-hand-right"></i> Je m'inscris
-					</button>
+						<div class="large-12 columns">
+						    <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" placeholder="Entrez votre adresse email et validez.">
+						
+							<button type="submit" class="button expand">
+							  <i class="icon-hand-right"></i> Je m'inscris
+							</button>
+						</div>
+						<div class="row">
+							<div class="large-12 columns text-center">
+								<%= link_to(image_tag("facebook.png", :alt => "Retrouvez CoachVincent sur les réseaux sociaux !", :title => "Rejoignez DSPT sur Facebook !"), "https://www.facebook.com/CoachVincentDSPT") %>
+								<span>Découvrez la page Facebook </span>
+
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -110,17 +120,18 @@
 				</div>
 				<div class="row">
 					<div class="large-12">
-						<ul class="large-block-grid-3">
-						  <li><%= image_tag "shop.png" %></li>
-						  <li><%= image_tag "partenaires.png" %></li>
-						  <li><%= image_tag "social.png" %></li>
+						<ul class="large-block-grid-3 text-center">
+						  <li><%= image_tag "shop_dusportpourtous.jpg" %></li>
+						  <li><%= image_tag "partenaires_dusportpourtous.jpg" %></li>
+						  <li><%= link_to(image_tag("social.png", :alt => "Retrouvez CoachVincent sur les réseaux sociaux !"), "https://www.facebook.com/CoachVincentDSPT") %></li>
+
 						</ul>						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
 
 <div id="coachvincent_ads" class="reveal-modal">
   	<div class="flex-video">

@@ -7,7 +7,7 @@
         <h1><%= link_to 'DSPT ', root_path %></h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#"></a></li>
     </ul>
     <section class="top-bar-section">
       <!-- Left Nav Section -->
@@ -66,11 +66,11 @@
     <section class="top-bar-section">
       <ul class="right text-center" id="c_login">
         <%= form_for("admin", :url => admin_session_path) do |f| %>
-            <li class="small-4 columns" id="c_email">            
+            <li class="large-4 columns" id="c_email">            
                 <%= f.text_field :email, :placeholder => 'Adresse email' %>
                 <%= link_to "Mot de passe oublié ?", new_password_path('admin') %>               
             </li>
-            <li class="small-4 columns" id="c_password">              
+            <li class="large-4 columns" id="c_password">              
               <%= f.password_field :password, :placeholder => 'Mot de passe' %>
               <label class="checkbox text-center" for="admin_remember_me">
                     <%= f.check_box :remember_me %> <span></span> Se souvenir de moi ?
