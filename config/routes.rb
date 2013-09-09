@@ -1,6 +1,7 @@
 Coachvincent::Application.routes.draw do
 
   get "admin/dashboard"
+  get "landing/index"
   get "pages/home"
   get "pages/exercices"
   get "pages/programmes"
@@ -74,7 +75,7 @@ end
   root :to => 'admin/dashboard#index', :as => 'authenticated_root'
   end
 
-  root :to => 'pages#home'
+  root :to => 'landing#index'
   
   # Rails 4 users must specify the 'as' option to give it a unique name
   # root :to => "main#dashboard", :as => "authenticated_root"

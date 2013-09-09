@@ -1,60 +1,96 @@
-<nav class="top-bar" data-options="is_hover:false">
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><%= link_to 'Du Sport Pour Tous ', root_path %></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
 <% if admin_signed_in? %>
-  <section class="top-bar-section">
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="divider"></li>
-      <li class="has-dropdown"><a href="#">Programmes</a>
-
-        <ul class="dropdown">          
-          <li><%= link_to "Créer un nouveau programme", :controller => "/programmes", :action => "new", :id => @programmes %></li>
-          <li><%= link_to "Voir tous les programmes", programmes_path %></li>
-        </ul>
+<!-- Nav connected -->
+  <nav class="top-bar" data-options="is_hover:false">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><%= link_to 'DSPT ', root_path %></h1>
       </li>
-      <li class="divider"></li>
-      <li class="has-dropdown"><a href="#">Exercices</a>
-
-        <ul class="dropdown">          
-          <li><%= link_to "Créer un nouvel exercice", :controller => "/exercices", :action => "new"  %></li>
-          <li><%= link_to "Voir tous les exercices", exercices_path %></li>
-        </ul>
-      </li>
-      <li class="divider"></li>
-      <li><a href="#">Dico des sports</a></li>
-      <li class="divider"></li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li class="divider"></li>
+        <li class="has-dropdown"><a href="#">Programmes</a>
 
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="divider hide-for-small"></li>
-      <li class="has-dropdown">
-				<a href="#"><%= image_tag current_admin.avatar.thumb.url , :class => 'thp' if current_admin.avatar? %><%= current_admin.email %></a>
-        <ul class="dropdown">
-          <li><label>Gérer le profil</label></li>
-          <li><%= link_to 'Voir le profil', current_admin %></li>
-          <li><%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %></li>		  
-          <li class="divider"></li>
-          <li><label>Quitter la session</label></li>
-          <li><%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %></li>
-        </ul>
-      </li>      
-    </ul>
-  </section>
-  <% else %>
-  <section class="top-bar-section">
-    <ul class="right">
-       <li class="has-form">
-        <%= link_to raw("<i class=\"icon-lock icon-white icon-large\">&nbsp; Se connecter</i>"), new_admin_session_path, {:class => 'button'}  %>
-      </li>       
+          <ul class="dropdown">          
+            <li><%= link_to "Créer un nouveau programme", :controller => "/programmes", :action => "new", :id => @programmes %></li>
+            <li><%= link_to "Voir tous les programmes", programmes_path %></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li class="has-dropdown"><a href="#">Exercices</a>
+
+          <ul class="dropdown">          
+            <li><%= link_to "Créer un nouvel exercice", :controller => "/exercices", :action => "new"  %></li>
+            <li><%= link_to "Voir tous les exercices", exercices_path %></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#">Dico des sports</a></li>
+        <li class="divider"></li>
       </ul>
-  </section>
-        <% end %>
-</nav>
+
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider hide-for-small"></li>
+        <li class="has-dropdown">
+  				<a href="#"><%= image_tag current_admin.avatar.thumb.url , :class => 'thp' if current_admin.avatar? %><%= current_admin.email %></a>
+          <ul class="dropdown">
+            <li><label>Gérer le profil</label></li>
+            <li><%= link_to 'Voir le profil', current_admin %></li>
+            <li><%= link_to 'Modifier le profil', edit_admin_registration_path(@admin) %></li>		  
+            <li class="divider"></li>
+            <li><label>Quitter la session</label></li>
+            <li><%= link_to('Se déconnecter', destroy_admin_session_path, :method => :delete) %></li>
+          </ul>
+        </li>      
+      </ul>
+    </section>
+  </nav>
+
+<% else %>
+<!-- Nav not connected -->
+  <nav class="top-bar" data-options="is_hover:false">    
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><%= link_to 'DSPT ', root_path %></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul> 
+    
+    <section class="top-bar-section">
+      <ul class="right text-center" id="c_login">
+        <%= form_for("admin", :url => admin_session_path) do |f| %>
+            <li class="small-4 columns" id="c_email">            
+                <%= f.text_field :email, :placeholder => 'Adresse email' %>
+                <%= link_to "Mot de passe oublié ?", new_password_path('admin') %>               
+            </li>
+            <li class="small-4 columns" id="c_password">              
+              <%= f.password_field :password, :placeholder => 'Mot de passe' %>
+              <label class="checkbox text-center" for="admin_remember_me">
+                    <%= f.check_box :remember_me %> <span></span> Se souvenir de moi ?
+                 </label>
+            </li>
+ 
+            <li class="has-form">
+              <%= button_tag(:type => 'submit', :class => 'large button expand round') do %>
+              <i class="icon-signin icon-white"></i> Se connecter
+              <% end %>
+            </li>
+          <% end %> 
+      </ul>
+    </section> 
+    <% end %>
+  </nav>
+
+
+          
+          
+        
+          
+      
