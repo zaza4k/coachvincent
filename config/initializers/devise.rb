@@ -37,7 +37,8 @@ Devise.setup do |config|
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [ :email ]
 
-
+  config.secret_key = 'b0245590decf3a0e5cbf3c6811c5468a50c52e3c39608c37b985f94acddb63daa4c73721dd1ed77c902
+  19e187fbbd12ab1d6b78d53ab481a5ce7365f4456b67a'
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
