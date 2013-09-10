@@ -41,6 +41,9 @@
 #top-heading #inscription span {
 	line-height: 1.25em;
 }
+#top-heading #link_facebook a {
+	color: #fff;
+}
 #top-heading form {
 	margin-top: 1.25em;
 }
